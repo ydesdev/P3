@@ -43,13 +43,8 @@ function getComment($id) {
     require('View/amendCommentView.php');
 }
 
-function amendComment($id, $amendedComment)
-{
-    $commentManager = new CommentManager();
-    $selectedComment = $commentManager->getComment($id);
-    $ammendedLines = $commentManager->amendComment($id,$amendedComment);
-
-    header('Location: index.php?action=post&id=' . $selectedComment['post_id'] );
+function logIn($id, $password) {
+    $loginCheck= new logInCheck($id,$password);
 
 
 

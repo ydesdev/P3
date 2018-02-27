@@ -29,3 +29,32 @@ public function amendComment($id,$comment)
 
     return $amendedComment;
 }
+
+public function writePost($id,$title,$content)
+{
+    $db = $this->dbConnnect();
+    $query = $db->prepare('INSERT INTO posts(id, title, content, creation_date) VALUES (id = :id, title = :title, content= :content, NOW())');
+    $newPost = $query->execute(array('id'=> $id, 'title'=>$title, 'content' =>$content));
+
+    return $newPost;
+}
+
+public function deletePost($id)
+{
+    $db = $this->dbConnect();
+    $query = $db->prepare('DELETE FROM posts WHERE id = :id');
+    $deletedPost = $query->execute(array('id'=>$id));
+
+    return $deletedPost;
+}
+
+private function logInCheck($id, $password)
+{
+    $db = $this->dbConnect();
+
+
+
+}
+
+private function Lo
+

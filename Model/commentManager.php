@@ -32,13 +32,13 @@ class CommentManager extends Manager
 
     }
 
-    public function ammendComment($id,$comment)
+    public function amendComment($id,$comment)
     {
         $db = $this->dbConnect();
         $query = $db->prepare('UPDATE comments SET comment = :comment WHERE id = :id');
         $ammendedComment = $query->execute(array('comment' => $comment, 'id' =>$id));
 
-        return $ammendedComment;
+        return $amendedComment;
     }
 
 }

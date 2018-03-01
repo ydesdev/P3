@@ -35,9 +35,36 @@ class CommentManager extends Manager
     {
         $db = $this->dbConnect();
         $query = $db->prepare('UPDATE comments SET comment = :comment WHERE id = :id');
-        $ammendedComment = $query->execute(array('comment' => $comment, 'id' =>$id));
+        $amendedComment = $query->execute(array('comment' => $comment, 'id' =>$id));
 
         return $amendedComment;
+    }
+
+    public function flagComment($id)
+    {
+        $db = $this->dbConnect();
+        $query = $db->prepare('UPDATE comments SET flag_count = flag_count + 1 WHERE id = :id');
+        $flaggedComment = $query->execute(array('id' =>$id));
+
+        return $flaggedComment;
+    }
+
+    public function reviewFlaggedComments()
+    {
+        $db = $this->dbConnect();
+        $query = $db->query('SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS most_flagged_comment FROM comments WHERE flag_count > 0 ORDER BY flag_count DESC');
+
+        return $query->fetchAll();
+
+    }
+
+    public function validateComment($id)
+    {
+        $db = $this->dbConnect();
+        $query = $db->prepare('UPDATE comments SET flag_count = 0 WHERE id = :id');
+        $validatedComment = $query->execute(array('id' =>$id));
+
+        return $validatedComment;
     }
 
 }

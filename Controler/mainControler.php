@@ -1,7 +1,7 @@
 <?php
-require_once('Model/postManager.php');
-require_once('Model/commentManager.php');
-require_once('Model/adminManager.php');
+require_once('Model/PostManager.php');
+require_once('Model/CommentManager.php');
+require_once('Model/UserManager.php');
 
 function listPosts()
 {
@@ -19,7 +19,7 @@ function post()
     $post = $postManager->getPost($_GET['id']);
     $comments = $commentManager->getComments($_GET['id']);
 
-    require('View/postView.php');
+    require('View/Main/postView.php');
 }
 
 
@@ -49,7 +49,7 @@ function getComment($id) {
 // On reprend les données du formulaire et on s'en sert de variable pour vérifier le pwd
 // Appliquer des conditions à $_SESSION + message d'erreur si besoin
 function checkPassword($login, $password){
-    $adminManager = new adminManager();
+    $adminManager = new UserManager();
 
     $hashedPassword= $adminManager->getPassword($login); //JF
     if(!empty($hashedPassword['password'])) {
@@ -59,7 +59,9 @@ function checkPassword($login, $password){
     }
 }
 
-function addNewPost()
+function addNewPost() {
+
+}
 
 
 

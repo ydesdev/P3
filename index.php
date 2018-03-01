@@ -1,6 +1,6 @@
 <?php
 
-require_once('Model/manager.php');
+require_once('Model/Manager.php');
 require('Controler/mainControler.php');
 
 try {

@@ -7,7 +7,7 @@
  */
 
 session_start();
-require_once('Model/manager.php');
+require_once('Model/Manager.php');
 require('Controler/mainControler.php');
 
 try {
@@ -44,9 +44,6 @@ try {
 
     }
 
-    else {
-        listPosts();
-    }
 }
 
 catch(Exception $e) {

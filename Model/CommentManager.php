@@ -1,6 +1,6 @@
 <?php
 
-class CommentManager extends MainManager
+class CommentManager extends Manager
 {
     public function getComments($postId)
     {

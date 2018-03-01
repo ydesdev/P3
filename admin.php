@@ -15,12 +15,21 @@ try {
         if (!empty($_POST['identifiant']) && !empty($_POST['password'])) {
             checkPassword($_POST['identifiant'],$_POST['password']);
         }
+        else {
+            throw new Exception('Identifant et/ou mot de passe manquant(s)');
+        }
 
     }
     if (!isset($_SESSION['user'])){
 
         displayLoginForm();
     }
+
+    if (isset($_GET['action']) && $_GET['action'] == 'writepost') {
+        addNewPost();
+    }
+
+
     elseif (isset($_GET['action'])) {
         if($_GET['action'] == 'amendComment') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {

@@ -1,7 +1,10 @@
 <?php
+
+require_once('Model/manager.php');
 require('Controler/mainControler.php');
 
 try {
+
     if (isset($_GET['action'])) {
         if ($_GET['action'] == 'listPosts') {
             listPosts();
@@ -25,7 +28,7 @@ try {
                 }
             }
             else {
-                throw new Exception('Erreur : aucun identifiant de billet envvoyé');
+                throw new Exception('Erreur : aucun identifiant de billet envoyé');
             }
         }
         elseif($_GET['action'] == 'getComment') {
@@ -37,17 +40,6 @@ try {
                 throw new Exception('Le commentaire ne peut être affiché');
             }
 
-        }
-        elseif($_GET['action'] == 'amendComment') {
-            if (isset($_GET['id']) && $_GET['id'] > 0) {
-                amendComment($_GET['id'], $_POST['changedcomment']);
-            }
-            else {
-                throw new Exception('Tous les champs ne sont pas remplis ou aucun commentaire sélectionné!');
-            }
-        }
-        else {
-            throw new Exception('Le commentaire n\'a pas pu être modifié');
         }
 
     }

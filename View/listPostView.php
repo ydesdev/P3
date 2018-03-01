@@ -5,18 +5,18 @@
  * Date: 27/02/2018
  * Time: 09:25
  */
-<?php $title = 'Billet simple pour l\'Alaska'; ?>
+$title = 'Billet simple pour l\'Alaska'; ?>
 
 <?php ob_start(); ?>
-    <h1> Billet simple pour l\'Alaska</h1>
+    <h1> Billet simple pour l'Alaska</h1>
     <h2> Jean Forteroche</h2>
     <p> Partir pour se perdre. Se perdre pour se trouver. </p>
 
 
 <?php
 
-while ($data = $posts->fetch())
-{
+while ($data = $posts->fetch()){
+
     ?>
     <div class="news">
         <h3>

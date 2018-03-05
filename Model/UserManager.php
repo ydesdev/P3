@@ -31,5 +31,7 @@ class UserManager extends Manager
 
         return $password;
     }
+
+
 }
 

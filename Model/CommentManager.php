@@ -67,4 +67,14 @@ class CommentManager extends Manager
         return $validatedComment;
     }
 
+    public function deleteComment($id)
+    {
+        $db = $this->dbConnect();
+        $query = $db->prepare('DELETE FROM comments WHERE id = :id');
+        $deletedComment =$query-> execute(array('id'=>$id));
+
+        return $deletedComment;
+
+    }
+
 }

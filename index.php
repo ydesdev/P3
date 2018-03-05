@@ -1,13 +1,9 @@
 <?php
 session_start();
-require_once('Model/Manager.php');
-require('Controler/mainControler.php');
-require('Controler/userRouter.php');
+require('Controler/mainRouter.php');
 
-
-
-$userRouter = new UserRouter();
-$userRouter->UserRouterQuery();
+$userRouter = new MainRouter();
+$userRouter->MainRouterQuery();
 
 
 //Comment appliquer le routeur admin en fonction de l'état de login ou pas??

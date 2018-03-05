@@ -9,10 +9,10 @@
 require_once('Model/Manager.php');
 require_once('Controler/mainControler.php');
 
-class UserRouter
+class MainRouter
 {
 
-    public function UserRouterQuery()
+    public function MainRouterQuery()
     {
         try {
             if (isset($_GET['action'])) {

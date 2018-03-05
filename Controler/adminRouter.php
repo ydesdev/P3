@@ -6,12 +6,63 @@
  * Time: 10:54
  */
 require_once('Model/Manager.php');
-require_once('Controler/mainControler.php');
-require_once('Controler/adminRouter.php');
+require_once('Controler/adminControler.php');
 
-class AdminRouter {
+class AdminRouter extends MainRouter {
 
-    public function AdminIdentification() {
+    //if isset $_SESSION: { if, if if }
+    //else !isset $_SESSION: displaylogginform()
+
+    public function AdminRouterQuery(){
+        try {
+            if (isset($_SESSION['user'])) {
+                if (isset($_GET['action']) && $_GET['action'] == 'writePost') {
+                        if (!empty($_POST['title']) && !empty($_POST['content'])) {
+                            addNewPost($_POST['title'], $_POST['content']);
+                        } else {
+                            throw new Exception('Erreur: tous les champs ne sont pas remplis!');
+                        }
+                    }
+
+                if (isset($_GET['action']) && $_GET['action'] == 'editPost') {
+                        if (isset($_GET['id'])) {
+                            editPost($_GET['id'], $_POST['title'], $_POST['content']);
+                        } else {
+                            throw new Exception('Aucun billet selectionné');
+                        }
+                }
+                if (isset($_GET['action']) && $_GET['action'] == 'reviewComments') {
+
+                }
+                if (isset($_GET['action']) && $_GET['action'] == 'deleteComment') {
+
+                }
+                if (isset($_GET['action']) && $_GET['action'] == 'okComment') {
+
+                }
+                }
+            if (isset($_GET['action']) && $_GET['action'] == 'login') {
+                if (!empty($_POST['identifiant']) && !empty($_POST['password'])) {
+                    checkPassword($_POST['identifiant'], $_POST['password']);
+                } else {
+                    throw new Exception('Identifant et/ou mot de passe manquant(s)');
+                }
+            }
+            elseif(!isset($_SESSION['user'])) {
+
+                displayLoginForm();
+            }
+
+        }catch
+        (Exception $e) {
+            $errorMessage = $e->getMessage();
+            require('View/errorView.php');
+        }
+
+    }
+
+
+/*    public function AdminIdentification() {
         try {
             if (isset($_GET['action']) && $_GET['action'] == 'login') {
                 if (!empty($_POST['identifiant']) && !empty($_POST['password'])) {
@@ -60,4 +111,5 @@ class AdminRouter {
 
 }
 }
+*/
 }

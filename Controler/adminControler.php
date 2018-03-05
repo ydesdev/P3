@@ -16,7 +16,6 @@ require_once('Model/UserManager.php');
 
 function checkPassword($login, $password){
     $adminManager = new UserManager();
-
     $hashedPassword= $adminManager->getPassword($login); //JF
     if(!empty($hashedPassword['password'])) {
         if (password_verify($password, $hashedPassword['password'])) {
@@ -25,12 +24,37 @@ function checkPassword($login, $password){
     }
 }
 
-function addNewPost() {
-
+function addNewPost($title, $content) {
+    $addedNewPost= new PostManager();
+    $succesfulPost= $addedNewPost->createPost($title, $content);
+    if($succesfulPost == false) {
+        throw new Exception('Impossible d\'ajouter ce chapitre. Tous les paramètres sont-ils bien définis? !');
+    }
+    else {
+        header('Location: index.php?action=listPosts');
+    }
 
 }
 
+function editPost($id,$title,$content) {
+    $editedPost= new PostManager();
+    $succesfulEdition= $editedPost->updatePost($id, $title, $content);
+    if($succesfulPost == false) {
+        throw new Exception('Impossible d\'éditer le texte. Tous les paramètres sont-ils bien définis? !');
+    }
+    else {
+        header('index.php?action=post&id=' . $id);
+    }
 
+}
+
+function mostFlaggedComments() {
+    $currentStanding= new CommentManager();
+    $flags= $currentStanding->reviewFlaggedComments();
+
+    require('View/Admin/flaggedCommentsView.php');
+
+}
 
 function logOut(){
     unset($_SESSION['user']);

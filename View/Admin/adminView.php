@@ -1,4 +1,4 @@
-//
+// A faire: traitement vers controlleur
 
 <?php
 
@@ -11,8 +11,9 @@ $title = 'Admin billet simple pour l\'Alaska'; ?>
 <ul>
     <li>Ecrire un nouveau billet</li>
     <li>Modifier ou effacer un billet </li>
-    <li>Voir un billet et ses commentaires</li>
-    <li>Ecrire un commentaire </li>
+    <li>Voir un billet et ses commentaires, ajouter un commentaire </li>
+    <li>Voir les commentaires signalés et les traiter</li>
+    <li>Nous contacter </li>
 </ul>
 
 

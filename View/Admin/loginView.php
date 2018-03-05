@@ -25,7 +25,7 @@ ob_start(); ?>
         </div>
     </form>
 
-    <p><a href="index.php"> Retour à la liste des billets</a></p>
+    <p><a href="index.php"> Page d'accueil</a></p>
 
 <?php $content = ob_get_clean(); ?>
 

@@ -11,6 +11,7 @@ function listPosts()
     require('View/listPostView.php');
 }
 
+
 function post()
 {
     $postManager = new PostManager();

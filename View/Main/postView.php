@@ -1,7 +1,7 @@
 <?php $title = htmlspecialchars($post['title']) ?>
 
 <?php ob_start(); ?>
-    <h1> Chapitre <? htmlspecialchars($post['id']) ?> </h1>
+    <h1> Chapitre <?= htmlspecialchars($post['id']) ?> </h1>
 
     <div class="chapitre">
         <h3>

@@ -56,6 +56,9 @@ function mostFlaggedComments() {
 
 }
 
+//function moderateComment() {}
+  //  $moderatedComment= new
+
 function logOut(){
     unset($_SESSION['user']);
 

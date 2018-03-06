@@ -8,6 +8,7 @@
 $title = 'Billet simple pour l\'Alaska'; ?>
 
 <?php ob_start(); ?>
+
     <h1> Billet simple pour l'Alaska</h1>
     <h2> Jean Forteroche</h2>
     <p> Partir pour se perdre. Se perdre pour se trouver. </p>
@@ -18,17 +19,11 @@ $title = 'Billet simple pour l\'Alaska'; ?>
 while ($data = $posts->fetch()){
 
     ?>
-    <div class="news">
-        <h3>
-            <?= htmlspecialchars($data['title'])?>
-            <em>le <?= $data['creation_date_fr'] ?></em>
-        </h3>
-
-        <p>
-            <?= nl2br(htmlspecialchars($data['content'])) ?>
-            <br />
-            <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>
-        </p>
+    <div class="container">
+        <div class="row">
+        <h4><a href="index.php?action=post&amp;id=<?=$data['id']?>"> Chapitre
+            <?= htmlspecialchars($data['id'])?> : <?= htmlspecialchars($data['title'])?> </a></h4>
+        </div>
     </div>
     <?php
 

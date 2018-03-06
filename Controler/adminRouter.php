@@ -5,7 +5,7 @@
  * Date: 05/03/2018
  * Time: 10:54
  */
-require_once('Model/Manager.php');
+
 require_once('Controler/adminControler.php');
 
 class AdminRouter extends MainRouter {
@@ -17,25 +17,28 @@ class AdminRouter extends MainRouter {
         try {
             if (isset($_SESSION['user'])) {
                 if (isset($_GET['action']) && $_GET['action'] == 'writePost') {
-                        if (!empty($_POST['title']) && !empty($_POST['content'])) {
-                            addNewPost($_POST['title'], $_POST['content']);
-                        } else {
-                            throw new Exception('Erreur: tous les champs ne sont pas remplis!');
-                        }
+                    if (!empty($_POST['title']) && !empty($_POST['content'])) {
+                        addNewPost($_POST['title'], $_POST['content']);
+                    } else {
+                        throw new Exception('Erreur: tous les champs ne sont pas remplis!');
                     }
+                }
 
                 if (isset($_GET['action']) && $_GET['action'] == 'editPost') {
-                        if (isset($_GET['id'])) {
-                            editPost($_GET['id'], $_POST['title'], $_POST['content']);
-                        } else {
-                            throw new Exception('Aucun billet selectionné');
-                        }
+                    if (isset($_GET['id'])) {
+                        editPost($_GET['id'], $_POST['title'], $_POST['content']);
+                    } else {
+                        throw new Exception('Aucun billet selectionné');
+                    }
                 }
                 if (isset($_GET['action']) && $_GET['action'] == 'reviewComments') {
+                    mostFlaggedComments();
 
                 }
-                if (isset($_GET['action']) && $_GET['action'] == 'deleteComment') {
-
+                if (isset($_GET['action']) && $_GET['action'] == 'moderateComment') {
+                    if (isset($_GET['id'])) {
+                        moderateComment();
+                    }
                 }
                 if (isset($_GET['action']) && $_GET['action'] == 'okComment') {
 

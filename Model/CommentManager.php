@@ -6,7 +6,7 @@ class CommentManager extends Manager
     {
 
         $db = $this->dbConnect();
-        $query = $db->prepare('SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments WHERE post_id = ? ORDER BY comment_date ASC');
+        $query = $db->prepare('SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin\') AS comment_date_fr FROM comments WHERE post_id = ? ORDER BY comment_date ASC');
         $comments = $query->execute(array($postId));
 
         return $query->fetchAll();
@@ -24,7 +24,7 @@ class CommentManager extends Manager
     public function getComment($id)
     {
         $db = $this->dbConnect();
-        $query = $db->prepare('SELECT id, post_id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments WHERE id = ?' );
+        $query = $db->prepare('SELECT id, post_id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin\') AS comment_date_fr FROM comments WHERE id = ?' );
         $selectedComment = $query->execute(array($id));
 
         return $query->fetch();
@@ -52,7 +52,7 @@ class CommentManager extends Manager
     public function reviewFlaggedComments()
     {
         $db = $this->dbConnect();
-        $query = $db->query('SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS most_flagged_comment FROM comments WHERE flag_count > 0 ORDER BY flag_count DESC');
+        $query = $db->query('SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin\') AS most_flagged_comment FROM comments WHERE flag_count > 0 ORDER BY flag_count DESC');
 
         return $query->fetchAll();
 
@@ -67,13 +67,13 @@ class CommentManager extends Manager
         return $validatedComment;
     }
 
-    public function deleteComment($id)
+    public function moderateComment($id,$moderated)
     {
         $db = $this->dbConnect();
-        $query = $db->prepare('DELETE FROM comments WHERE id = :id');
-        $deletedComment =$query-> execute(array('id'=>$id));
+        $query = $db->prepare('UPDATE comments SET moderated= :moderated WHERE id= :id');
+        $deletedComment =$query-> execute(array('id'=>$id, 'moderated'=>$moderated));
 
-        return $deletedComment;
+        return $moderatedComment;
 
     }
 

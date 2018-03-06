@@ -7,11 +7,11 @@
  */
 
 ob_start(); ?>
-    <h1> S'identifier </h1>
+    <h5> S'identifier </h5>
 
 
 
-    <form action="admin.php?action=login" method="post">
+    <form action="Controler/adminRouter.php?action=login" method="post">
         <div>
             <label> Identifiant</label>
             <input type="text" name="identifiant">

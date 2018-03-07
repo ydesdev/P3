@@ -7,7 +7,7 @@
  */
 
 require_once('Model/Manager.php');
-require_once('Controler/mainControler.php');
+require_once('Controller/mainController.php');
 
 class MainRouter
 {

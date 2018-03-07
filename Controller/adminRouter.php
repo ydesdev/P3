@@ -6,7 +6,7 @@
  * Time: 10:54
  */
 
-require_once('Controler/adminControler.php');
+require_once('Controller/adminController.php');
 
 class AdminRouter extends MainRouter {
 
@@ -16,6 +16,9 @@ class AdminRouter extends MainRouter {
     public function AdminRouterQuery(){
         try {
             if (isset($_SESSION['user'])) {
+                if (isset($_GET['action']) && $_GET['action'] == 'displayAdmin'){
+                    displayAdmin();
+                }
                 if (isset($_GET['action']) && $_GET['action'] == 'writePost') {
                     if (!empty($_POST['title']) && !empty($_POST['content'])) {
                         addNewPost($_POST['title'], $_POST['content']);

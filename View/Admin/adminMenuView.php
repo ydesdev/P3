@@ -5,7 +5,7 @@
 $title = 'Admin billet simple pour l\'Alaska'; ?>
 
 <?php ob_start(); ?>
-<h1> Admmin : Billet simple pour l'Alaska</h1>
+<h1> Admministration du blog : Billet simple pour l'Alaska</h1>
 <h2> Bonjour Jean! </h2>
 <p> Que voulez-vous faire?  </p> <!-- a faire en tableau avec boutons radios ou liens pour traitement dans admin manager !-->
 <ul>

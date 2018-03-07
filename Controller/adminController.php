@@ -23,6 +23,9 @@ function checkPassword($login, $password){
         }
     }
 }
+function displayAdmin() {
+    require ('View/admin/adminMenuView.php');
+}
 
 function addNewPost($title, $content) {
     $addedNewPost= new PostManager();

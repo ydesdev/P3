@@ -1,7 +1,7 @@
 <?php
 session_start();
-require('Controler/mainRouter.php');
-require('Controler/adminRouter.php');
+require('Controller/mainRouter.php');
+require('Controller/adminRouter.php');
 
 $userRouter = new MainRouter();
 $userRouter->MainRouterQuery();

@@ -13,5 +13,17 @@
 <body>
 <?= $content ?>
 </body>
+<footer>
+    <div class="navbar navbar-fixed-bottom">
+            <div class="col-sm-offset-10 col-sm-2">
+                <a class="btn btn-info btn-xs" href="index.php?action=login">Accès admin</a>
+            </div>
+    </div>
+
+</footer>
+
+
+<script src="Public/bootstrap/js/jquery-3.3.1.js"></script>
+<script src="Public/bootstrap/js/bootstrap.min.js"></script>
 
 </html>

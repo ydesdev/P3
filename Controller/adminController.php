@@ -21,11 +21,22 @@ function checkPassword($login, $password){
         if (password_verify($password, $hashedPassword['password'])) {
             $_SESSION['user']=$login;
         }
+        else {
+            throw new Exception('Identifiant ou mot de passe incorrect');
+
+        }
+
     }
 }
+
 function displayAdmin() {
-    require ('View/admin/adminMenuView.php');
+    require ('View/Admin/adminMenuView.php');
 }
+
+function displayWritingForm() {
+    require ('View/Admin/writePostView.php');
+}
+
 
 function addNewPost($title, $content) {
     $addedNewPost= new PostManager();
@@ -42,7 +53,7 @@ function addNewPost($title, $content) {
 function editPost($id,$title,$content) {
     $editedPost= new PostManager();
     $succesfulEdition= $editedPost->updatePost($id, $title, $content);
-    if($succesfulPost == false) {
+    if($succesfulEdition == false) {
         throw new Exception('Impossible d\'éditer le texte. Tous les paramètres sont-ils bien définis? !');
     }
     else {

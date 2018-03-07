@@ -1,12 +1,12 @@
-// A faire: traitement vers controlleur
+
 
 <?php
 
 $title = 'Admin billet simple pour l\'Alaska'; ?>
 
 <?php ob_start(); ?>
-<h1> Admministration du blog : Billet simple pour l'Alaska</h1>
-<h2> Bonjour Jean! </h2>
+<h1> Administration du blog : Billet simple pour l'Alaska</h1>
+<h2> Bonjour Jean, </h2>
 <p> Que voulez-vous faire?  </p> <!-- a faire en tableau avec boutons radios ou liens pour traitement dans admin manager !-->
 <ul>
     <li><a href="index.php?action=writePost"> Ecrire un nouveau billet</a></li>
@@ -19,4 +19,4 @@ $title = 'Admin billet simple pour l\'Alaska'; ?>
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require('template.php'); ?>
+<?php require('View/template.php'); ?>

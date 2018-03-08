@@ -21,11 +21,11 @@ class PostManager extends Manager
         return $post;
     }
 
-    public function createPost($title, $content)
+    public function createPost($id, $title, $content)
     {
         $db = $this->dbConnect();
-        $query = $db->prepare('INSERT INTO posts(id, title, content, creation_date) VALUES (title = :title, content= :content, NOW())');
-        $newPost = $query->execute(array('title' => $title, 'content' => $content));
+        $query = $db->prepare('INSERT INTO posts(id, title, content, creation_date) VALUES (id= :id, title = :title, content= :content, NOW())');
+        $newPost = $query->execute(array('id' => $id, 'title' => $title, 'content' => $content));
 
         return $newPost;
     }

@@ -15,61 +15,65 @@ class AdminRouter extends MainRouter
     {
         try {
             if (isset($_GET['action']) && $_GET['action'] == 'accessAdmin') {
-
                 if (isset($_SESSION['user'])) {
                     displayAdmin();
                 }
             }
             if (isset($_SESSION['user'])) {
-                   if (isset($_GET['action']) && $_GET['action'] == 'writePost') {
-                                displayWritingForm();
-                                {
-                                    if (!empty($_POST['title']) && !empty($_POST['content'])) {
-                                        addNewPost($_POST['title'], $_POST['content']);
-                                    }
-                                }
-                            }
+                if (isset($_GET['action']) && $_GET['action'] == 'writePost') {
+                    displayWritingForm();
+                }
+                if (!empty($_POST['title']) && !empty($_POST['content'])) {
+                    addNewPost($_POST['title'], $_POST['content']);
+                }
 
-                            if (isset($_GET['action']) && $_GET['action'] == 'editPost') {
-                                if (isset($_GET['id'])) {
-                                    editPost($_GET['id'], $_POST['title'], $_POST['content']);
-                                } else {
-                                    throw new Exception('Aucun billet selectionné');
-                                }
-                            }
-                            if (isset($_GET['action']) && $_GET['action'] == 'reviewComments') {
-                                mostFlaggedComments();
+                if (isset($_GET['action']) && $_GET['action'] == 'displayEditForm') {
+                    displayEditForm();
+                }
 
-                            }
-                            if (isset($_GET['action']) && $_GET['action'] == 'moderateComment') {
-                                if (isset($_GET['id'])) {
-                                    moderateComment();
-                                }
-                            }
-                            if (isset($_GET['action']) && $_GET['action'] == 'okComment') {
+                if (isset($_GET['action']) && $_GET['action'] == 'editPost') {
+                    if (isset($_GET['id'])) {
+                        editPost($_GET['id'], $_POST['title'], $_POST['content']);
+                    } else {
+                        throw new Exception('Aucun billet selectionné');
+                    }
+                }
+                if (isset($_GET['action']) && $_GET['action'] == 'deletePost') {
+                    if (isset($_GET['id'])) {
+                        removePost($_GET['id']);
+                    } else {
+                        throw new Exception('Aucun billet selectionné');
+                    }
+                }
 
-                            }
-                        }
+                if (isset($_GET['action']) && $_GET['action'] == 'reviewComments') {
+                    mostFlaggedComments();
+                }
+                if (isset($_GET['action']) && $_GET['action'] == 'moderateComment') {
+                    if (isset($_GET['id'])) {
+                        moderateComment();
+                    }
+                }
+                if (isset($_GET['action']) && $_GET['action'] == 'okComment') {
 
+                }
+            }
             if (isset($_GET['action']) && $_GET['action'] == 'login') {
                 if (!empty($_POST['identifiant']) && !empty($_POST['password'])) {
                     checkPassword($_POST['identifiant'], $_POST['password']);
                     {
                         if (isset($_SESSION['user'])) {
-                            {
-                                displayAdmin();
-                            }
+                            displayAdmin();
                         } else {
                             throw new Exception('Identifant et/ou mot de passe manquant(s)');
                         }
                     }
                 }
-            }
-            elseif (!isset($_SESSION['user'])) {
+            } elseif (!isset($_SESSION['user'])) {
 
-                        displayLoginForm();
-                    }
-                }
+                displayLoginForm();
+            }
+        }
         catch
         (Exception $e) {
             $errorMessage = $e->getMessage();

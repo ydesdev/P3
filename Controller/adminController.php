@@ -13,7 +13,7 @@ require_once('Model/CommentManager.php');
 require_once('Model/UserManager.php');
 
 
-
+//User functions
 function checkPassword($login, $password){
     $adminManager = new UserManager();
     $hashedPassword= $adminManager->getPassword($login); //JF
@@ -29,6 +29,7 @@ function checkPassword($login, $password){
     }
 }
 
+//Display function
 function displayAdmin() {
     require ('View/Admin/adminMenuView.php');
 }
@@ -37,10 +38,23 @@ function displayWritingForm() {
     require ('View/Admin/writePostView.php');
 }
 
+function displayLoginForm() {
 
-function addNewPost($title, $content) {
+    require('View/Admin/loginView.php');
+
+}
+function displayEditForm() {
+    $displayChapters = new PostManager();
+    $posts = $displayChapters->getPosts();
+
+    require('View/Admin/editPostView.php');
+}
+
+//Edit functions
+
+function addNewPost($id, $title, $content) {
     $addedNewPost= new PostManager();
-    $succesfulPost= $addedNewPost->createPost($title, $content);
+    $succesfulPost= $addedNewPost->createPost($id, $title, $content);
     if($succesfulPost == false) {
         throw new Exception('Impossible d\'ajouter ce chapitre. Tous les paramètres sont-ils bien définis? !');
     }
@@ -62,6 +76,19 @@ function editPost($id,$title,$content) {
 
 }
 
+function removePost($id) {
+    $removedPost= new PostManager();
+    $succesfulRemoval= $removedPost->deletePost($id);
+    if($succesfulRemoval == false) {
+        throw new Exception('Impossible d\'effacer le texte. Tous les paramètres sont-ils bien définis? !');
+    }
+    else {
+        header('index.php?action=accessAdmin');
+    }
+
+}
+
+
 function mostFlaggedComments() {
     $currentStanding= new CommentManager();
     $flags= $currentStanding->reviewFlaggedComments();
@@ -79,8 +106,3 @@ function logOut(){
 
 }
 
-function displayLoginForm() {
-
-    require('View/Admin/loginView.php');
-
-}

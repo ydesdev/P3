@@ -33,7 +33,7 @@ class PostManager extends Manager
     public function updatePost($id, $title, $content)
     {
         $db = $this->dbConnect();
-        $query = $db->prepare('UPDATE posts SET title, content WHERE ID = :id');
+        $query = $db->prepare('UPDATE posts SET title = :title, content = :content WHERE ID = :id');
         $updatedPost = $query->execute(array('id' => $id, 'title' => $title, 'content' => $content));
 
         return $updatedPost;

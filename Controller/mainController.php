@@ -50,5 +50,10 @@ function getComment($id) {
 function flagComment($id) {
     $commentManager = new CommentManager();
     $flaggedComment= $commentManager->flagComment($id);
-
+    if ($flaggedComment) {
+        header('Location: index.php?action=post&id=' . $flaggedComment['post_id']);
+    }
+    else {
+        throw new Exception(' Ce commentaire n\'existe pas');
+    }
 }

@@ -12,13 +12,14 @@ $title = 'Billet simple pour l\'Alaska'; ?>
 <div class="container">
     <div class="row col-xs-offset-1 col-xs-10">
         <div class="panel">
-            <div class="panel-heading"><h2>Ecrire un nouveau chapitre</h2></div>
+            <div class="panel-heading">
+                <button type="button" class="close" data-dismiss="panel">
+                    <span aria-hidden="true"></span>
+                    <span class="sr-only">Close</span>
+                </button>&times
+                <h2>Ecrire un nouveau chapitre</h2></div>
             <div class="panel-body">
                 <form action="index.php?action=writePost" method="post">
-                    <div class="col-xs-2 form-group">
-                        <label for="chapter_id"> Chapitre :</label>
-                        <input type="text" class="form-control" id="chapter_id">
-                    </div>
                     <div class="col-xs-12 form-group">
                         <label for="title"> Titre :</label>
                         <input type="text" class="form-control" id="title">

@@ -67,13 +67,13 @@ class CommentManager extends Manager
         return $validatedComment;
     }
 
-    public function moderateComment($id,$moderated)
+    public function deleteComment($id)
     {
         $db = $this->dbConnect();
-        $query = $db->prepare('UPDATE comments SET moderated= :moderated WHERE id= :id');
-        $deletedComment =$query-> execute(array('id'=>$id, 'moderated'=>$moderated));
+        $query = $db->prepare('DELETE FROM comments WHERE id= :id');
+        $deletedComment =$query-> execute(array('id'=>$id));
 
-        return $moderatedComment;
+        return $deletedComment;
 
     }
 

@@ -46,3 +46,9 @@ function getComment($id) {
     require('View/Admin/amendCommentView.php');
 }
 
+
+function flagComment($id) {
+    $commentManager = new CommentManager();
+    $flaggedComment= $commentManager->flagComment($id);
+
+}

@@ -29,7 +29,7 @@ function checkPassword($login, $password){
     }
 }
 
-//Display function
+//Display functions
 function displayAdmin() {
     require ('View/Admin/adminMenuView.php');
 }
@@ -43,7 +43,7 @@ function displayLoginForm() {
     require('View/Admin/loginView.php');
 
 }
-function displayEditForm() {
+function displayChapterEditForm() {
     $displayChapters = new PostManager();
     $posts = $displayChapters->getPosts();
 
@@ -88,6 +88,7 @@ function removePost($id) {
 
 }
 
+//Comment Admin
 
 function mostFlaggedComments() {
     $currentStanding= new CommentManager();
@@ -97,8 +98,6 @@ function mostFlaggedComments() {
 
 }
 
-//function moderateComment() {}
-  //  $moderatedComment= new CommentManager();
 
 
 function logOut(){

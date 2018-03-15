@@ -17,6 +17,11 @@
     <div class="navbar navbar-fixed-bottom">
             <div class="col-sm-offset-10 col-sm-2">
                 <a class="btn btn-info btn-xs" href="index.php?action=accessAdmin">Accès admin</a>
+                <? if (isset($_SESSION['user'])) {
+                    ?>
+                <a class="btn btn-default btn-xs" href="index.php?action=logOff">Déconnexion</a>
+               <? }
+               ?>
             </div>
     </div>
 

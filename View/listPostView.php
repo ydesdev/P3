@@ -26,7 +26,7 @@ $title = 'Billet simple pour l\'Alaska'; ?>
     </div>
 
 <?php
-
+$chapterNumber=1;
 while ($data = $posts->fetch()){
 
     ?>
@@ -34,12 +34,12 @@ while ($data = $posts->fetch()){
             <div class="row col-md-offset-5 col-md-3">
                 <div class="panel">
                   <h4><a href="index.php?action=post&amp;id=<?=$data['id']?>"> Chapitre
-                    <?= htmlspecialchars($data['id'])?> : <?= htmlspecialchars($data['title'])?> </a></h4>
+                    <?=$chapterNumber?> : <?= htmlspecialchars($data['title'])?> </a></h4>
                 </div>
             </div>
          </div>
     <?php
-
+$chapterNumber ++;
 }
 $posts->closeCursor();
 ?>

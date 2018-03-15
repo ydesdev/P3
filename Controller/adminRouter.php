@@ -14,6 +14,76 @@ class AdminRouter extends MainRouter
     public function AdminRouterQuery()
     {
         try {
+            if (isset($_GET['action'])) {
+                if (isset($_SESSION['user'])) {
+                    $action = $_GET['action'];
+                    switch ($action) {
+
+                        case "accessAdmin":
+                            displayAdmin();
+                            break;
+
+                        case "writePost":
+                            displayWritingForm();
+                            break;
+
+                        case "editPost":
+                            if (isset($_GET['id'])) {
+                                editPost($_GET['id'], $_POST['title'], $_POST['content']);
+                            } else {
+                                throw new Exception('Aucun billet selectionné');
+                            }
+                            break;
+
+                        case "displayEditForm":
+                            displayChapterEditForm();
+                            break;
+
+                        case "reviewComments":
+                            mostFlaggedComments();
+                            break;
+
+                        case "moderateComment":
+                            if (isset($_GET['id'])) {
+                                moderateComment($_GET['id']);
+                            } else {
+                                throw new Exception('Aucun commentaire selectionné');
+                            }
+                            break;
+                        case "okComment":
+                            okComment();
+                            break;
+                        case"logOff":
+                            logOut();
+                            break;
+                    }
+                } elseif (isset($_GET['action']) && $_GET['action'] == 'login') {
+                    if (!empty($_POST['identifiant']) && !empty($_POST['password'])) {
+                        checkPassword($_POST['identifiant'], $_POST['password']);
+                        {
+                            if (isset($_SESSION['user'])) {
+                                displayAdmin();
+                            } else {
+                                throw new Exception('Identifant et/ou mot de passe manquant(s)');
+                            }
+                        }
+                    }
+                }
+            }
+            else {
+
+            displayLoginForm();
+        }
+        } catch
+        (Exception $e) {
+            $errorMessage = $e->getMessage();
+            require('View/errorView.php');
+        }
+    }
+}
+
+
+            /*
             if (isset($_GET['action']) && $_GET['action'] == 'accessAdmin') {
                 if (isset($_SESSION['user'])) {
                     displayAdmin();
@@ -82,3 +152,4 @@ class AdminRouter extends MainRouter
 
     }
 }
+            */

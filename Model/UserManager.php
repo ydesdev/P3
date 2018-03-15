@@ -18,6 +18,7 @@ return $ammendedComment;
  méthode pour la création de billets:
  *
  **/
+require_once ('Model/Manager.php');
 
 class UserManager extends Manager
 {

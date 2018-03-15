@@ -1,13 +1,12 @@
 <?php
 session_start();
-require_once('Controller/mainRouter.php');
-require_once('Controller/adminRouter.php');
+require_once('Controller/AdminRouter.php');
 
-$userRouter = new MainRouter();
-$userAdmin = new AdminRouter();
 
-$userRouter->MainRouterQuery();
-$userAdmin->AdminRouterQuery();
+$router= new AdminRouter();
+
+$router->MainRouterQuery();
+$router->AdminRouterQuery();
 
 
 

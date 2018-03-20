@@ -57,11 +57,11 @@ $posts->closeCursor();
                 <form action="index.php?action=writePost" method="post">
                     <div class="col-xs-12 form-group">
                         <label for="title"> Titre :</label>
-                        <input type="text" class="form-control" id="title" value=<?= htmlspecialchars($data['title'])?>/>
+                        <input type="text" class="form-control" id="title" value=<?= htmlspecialchars($data['title'])?>>
                     </div>
                     <div class="col-xs-12 form-group">
                         <label for="content"> Texte :</label>
-                        <textarea class="form-control" rows="10" id="content"><div><?= htmlspecialchars($data['content'])?></div></textarea>
+                        <textarea class="form-control" rows="10" id="content"><?= htmlspecialchars($data['content'])?></textarea>
                     </div>
                     <div class="modal-footer">
                         <div class="col-xs-12 form-group">

@@ -11,9 +11,9 @@ $title = 'Billet simple pour l\'Alaska'; ?>
 
 <div class="container">
     <div class="row col-xs-offset-1 col-xs-10">
-        <div class="panel">
+        <div class="panel fade in collapse" >
             <div class="panel-heading">
-                <button type="button" class="close" data-dismiss="panel">
+                <button type="button" class="close" data-toggle="collapse" data-dismiss="panel">
                     <span aria-hidden="true"></span>
                     <span class="sr-only">Close</span>
                 </button>&times

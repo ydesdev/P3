@@ -73,7 +73,7 @@ class AdminController
     public function displayChapterEditForm()
     {
         $displayChapters = new PostManager();
-
+        $post = $postManager->getPost($_GET['id']);
         $posts = $displayChapters->getPosts();
 
         require('View/Admin/editPostView.php');

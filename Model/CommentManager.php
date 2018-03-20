@@ -56,7 +56,7 @@ class CommentManager extends Manager
     public function reviewFlaggedComments()
     {
         $db = $this->dbConnect();
-        $query = $db->query('SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin\') AS most_flagged_comment FROM comments WHERE flag_count > 0 ORDER BY flag_count DESC');
+        $query = $db->query('SELECT id, author, comment, flag_count, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin\') AS comment_date_fr FROM comments WHERE flag_count > 0 ORDER BY flag_count DESC');
 
         return $query->fetchAll();
 

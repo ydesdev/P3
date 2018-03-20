@@ -41,25 +41,17 @@ class AdminController
 
 //Display functions
 
-    /**
-     *
-     */
+
     public function displayAdmin()
     {
         require('View/Admin/adminMenuView.php');
     }
 
-    /**
-     *
-     */
     public function displayWritingForm()
     {
         require('View/Admin/writePostView.php');
     }
 
-    /**
-     *
-     */
     public function displayLoginForm()
     {
 
@@ -67,9 +59,6 @@ class AdminController
 
     }
 
-    /**
-     *
-     */
     public function displayChapterEditForm()
     {
         $displayChapters = new PostManager();
@@ -134,9 +123,6 @@ class AdminController
 
 //Comment Admin
 
-    /**
-     *
-     */
     public function mostFlaggedComments()
     {
         $currentStanding = new CommentManager();
@@ -146,10 +132,6 @@ class AdminController
 
     }
 
-
-    /**
-     *
-     */
     public function logOut()
     {
         unset($_SESSION['user']);

@@ -43,7 +43,7 @@
 
 }else{ ?>
 
-    <p> Pas de commentaire</p>
+    <p> Pas de commentaire </p>
 
                         <?php
 

@@ -58,6 +58,7 @@ class MainRouter
                         break;
                     case "flagComment":
                         $this->mainController->flagComment($_GET['id']);
+
                     }
             }
 

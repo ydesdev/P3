@@ -35,6 +35,9 @@ class AdminRouter extends MainRouter
                         case "writePost":
                             $this->adminController->displayWritingForm();
                             break;
+                        case "savePost":
+                            $this->adminController->addNewPost($_POST['title'], $_POST['content']);
+                            break;
 
                         case "editPost":
                             if (isset($_GET['id'])) {
@@ -43,7 +46,13 @@ class AdminRouter extends MainRouter
                                 throw new Exception('Aucun billet selectionné');
                             }
                             break;
-
+                        case "deletePost":
+                            if (isset($_GET['id'])) {
+                                $this->adminController->removePost($_GET['id']);
+                            } else {
+                                throw new Exception('Aucun billet selectionné');
+                            }
+                            break;
                         case "displayEditForm":
                             $this->adminController->displayChapterEditForm();
                             break;
@@ -66,7 +75,7 @@ class AdminRouter extends MainRouter
                             $this->adminController->logOut();
                             break;
                     }
-                } elseif (isset($_GET['action']) && $_GET['action'] == 'login') {
+                } elseif (isset($_GET['action']) && $_GET['action'] == 'accessAdmin') {
                     if (!empty($_POST['identifiant']) && !empty($_POST['password'])) {
                         $this->adminController->checkPassword($_POST['identifiant'], $_POST['password']);
                         {
@@ -77,6 +86,11 @@ class AdminRouter extends MainRouter
                             }
                         }
                     }
+                    else {
+
+                            $this->adminController->displayLoginForm();
+                        }
+
                 }
             }
             else {

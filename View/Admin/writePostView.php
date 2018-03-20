@@ -19,14 +19,14 @@ $title = 'Billet simple pour l\'Alaska'; ?>
                 </button>&times
                 <h2>Ecrire un nouveau chapitre</h2></div>
             <div class="panel-body">
-                <form action="index.php?action=writePost" method="post">
+                <form action="index.php?action=savePost" method="post">
                     <div class="col-xs-12 form-group">
                         <label for="title"> Titre :</label>
-                        <input type="text" class="form-control" id="title">
+                        <input type="text" class="form-control" name="title" id="title"/>
                     </div>
                     <div class="col-xs-12 form-group">
                         <label for="content"> Texte :</label>
-                        <textarea class="form-control" rows="10" id="content"></textarea>
+                        <textarea class="form-control" rows="10" name="content" id="content"></textarea>
                     </div>
                     <div class="col-xs-12 form-group">
                         <input type="submit" class="btn btn-primary" value="Enregistrer">

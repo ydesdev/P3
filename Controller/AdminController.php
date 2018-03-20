@@ -73,7 +73,6 @@ class AdminController
     public function displayChapterEditForm()
     {
         $displayChapters = new PostManager();
-        $post = $postManager->getPost($_GET['id']);
         $posts = $displayChapters->getPosts();
 
         require('View/Admin/editPostView.php');
@@ -87,10 +86,10 @@ class AdminController
      * @param $content
      * @throws Exception
      */
-    public function addNewPost($id, $title, $content)
+    public function addNewPost($title, $content)
     {
         $addedNewPost = new PostManager();
-        $succesfulPost = $addedNewPost->createPost($id, $title, $content);
+        $succesfulPost = $addedNewPost->createPost($title, $content);
         if ($succesfulPost == false) {
             throw new Exception('Impossible d\'ajouter ce chapitre. Tous les paramètres sont-ils bien définis? !');
         } else {
@@ -112,7 +111,7 @@ class AdminController
         if ($succesfulEdition == false) {
             throw new Exception('Impossible d\'éditer le texte. Tous les paramètres sont-ils bien définis? !');
         } else {
-            header('index.php?action=post&id=' . $id);
+            header('Location: index.php?action=listPosts');
         }
 
     }
@@ -154,7 +153,7 @@ class AdminController
     public function logOut()
     {
         unset($_SESSION['user']);
-
+        header('Location: index.php?action=listPosts');
     }
 }
 

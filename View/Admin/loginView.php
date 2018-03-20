@@ -14,7 +14,7 @@ $title = 'Billet simple pour l\'Alaska'; ?>
                     <h2 class="text-center"> S'identifier </h2>
 
 
-                    <form action="index.php?action=login" method="post" class="form-horizontal">
+                    <form action="index.php?action=accessAdmin" method="post" class="form-horizontal">
                         <div class="form-group">
                             <label for="identifiant" class="col-xs-6 control-label"> Identifiant: </label>
                             <div class="col-xs-6">

@@ -11,9 +11,10 @@
 <div class="container">
 <div class="row">
     <div class="row col-md-offset-2 col-md-8">
+
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h2> Commentaires Signalés</h2>
+                <h2> Commentaires signalés</h2>
 
             </div>
             <div class="panel-body">
@@ -31,36 +32,47 @@
                         {
                         ?>
 
+
                         <td><p><strong><?= htmlspecialchars($flag['author']) ?></strong><br/>
                                 le <?= $flag['comment_date_fr'] ?></p></td>
                         <td><p><?= nl2br(htmlspecialchars($flag['comment'])) ?></p></td>
                         <td><p><?= nl2br(htmlspecialchars($flag['flag_count'])) ?></p></td>
-                        <td><a href="index.php?action=okComment&amp;id=<?= $flag['id'] ?>"><input type="submit"
-                                                                                                    class="btn btn-primary btn-xs"
-                                                                                                    data-toggle="modal"
-                                                                                                    data-target="#flagPost"
-                                                                                                    value="Valider ce commentaire"></a>
+                        <td>
+                            <a href="index.php?action=okComment&amp;id=<?= $flag['id'] ?>" class="btn btn-primary btn-xs">Valider ce commentaire</a>
                         <br/>
-                        <a href="index.php?action=okComment&amp;id=<?= $flag['id'] ?>"><input type="submit"
-                                                                                                  class="btn btn-danger btn-xs"
-                                                                                                  data-toggle="modal"
-                                                                                                  data-target="#flagPost"
-                                                                                                  value="Effacer ce commentaire"></a>
+                            <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteComment"> Effacer ce commentaire</button>
+
+                            <br/>
+                            <a href="index.php?action=post&amp;id=<?= $flag['post_id'] ?>" type="submit" class="btn btn-info btn-xs">Voir le billet</a>
                         </td>
                     </tr>
                     <?php
-                    }
-
+                        }
                     }else{ ?>
-
                         <p> Pas de commentaire signalé</p>
-
                         <?php
-
                     }
                     ?>
+
                 </table>
               </div>
+            </div>
+            <div class="modal fade" id="deleteComment" role="dialog" aria-labelledby="deleteComment" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h4 class="modal-title">Confirmation</h4>
+                        </div>
+                        <div class="modal-body">
+                        <p><span class="glyphicon glyphicon-alert"></span> Etes-vous sûr de vouloir effacer de commentaire?</p>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button"  class="btn btn-info" data-dismiss="modal">Annuler</button>
+                        <a href="index.php?action=deleteComment&amp;id=<?=$flag['id']?>"class="btn btn-danger" role="button">Effacer</a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
@@ -68,13 +80,8 @@
 <?php $content = ob_get_clean();?>
 <?php require('View/template.php'); ?>
 
-</div>
-<!--fetch des commentaires flaggés, par ordre décroissant de flags
 
-//pour chaque commentaire un bouton delete et un bouton ok
-
-//un retour à la liste après chaque opération
-
+<!--
 //un lien de retour vers l'admin
 --!>
 

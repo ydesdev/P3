@@ -24,7 +24,8 @@ $title = 'Billet simple pour l\'Alaska'; ?>
     </div>
 <?php
 
-while ($data = $posts->fetch()){
+foreach ($posts as $data)
+{
 
 ?>
     <div class="row">
@@ -33,31 +34,37 @@ while ($data = $posts->fetch()){
                 <tr>
                     <td><h5> <?= htmlspecialchars($data['title']) ?></h5></td>
                     <td class="col-md-1"><input type="submit" class="btn btn-primary btn-xs" data-toggle="modal"
-                                                data-target="#editPost" value="Modifier"></td>
-                    <td class="col-md-1"><input type="submit" class="btn btn-alert btn-xs" data-toggle="modal"
+                                                data-target="#editPost<?= $data['id'] ?>" value="Modifier"></td>
+                    <td class="col-md-1"><input type="submit" class="btn btn-danger btn-xs" data-toggle="modal"
                                                 data-target="#deletePost" value="Effacer"></a></td>
-                </tr><div class="modal fade" id="editPost" >
+                </tr>
+                <div class="modal fade" id="editPost<?= $data['id'] ?>">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">
                                     <span aria-hidden="true">&times;</span>
                                     <span class="sr-only">Close</span>
-                                </button><h4>Modifier un chapitre</h4>
+                                </button>
+                                <h4>Modifier un chapitre</h4>
 
                                 <div class="modal-body">
-                                    <form action="index.php?action=editPost&amp;id=<?=$data['id']?> " method="post">
+                                    <form action="index.php?action=editPost&amp;id=<?= $data['id'] ?> " method="post">
                                         <div class="col-xs-12 form-group">
                                             <label for="title"> Titre :</label>
-                                            <input type="text" class="form-control" name="title" id="title" value="<?= htmlspecialchars($data['title'])?>">
+                                            <input type="text" class="form-control" name="title" id="title"
+                                                   value="<?= htmlspecialchars($data['title']) ?>">
                                         </div>
                                         <div class="col-xs-12 form-group">
                                             <label for="content"> Texte :</label>
-                                            <input type="text" class="form-control" name="content" id="content" value="<?= htmlspecialchars($data['content'])?>">
+                                            <textarea class="form-control" name="content" id="content"> <?= htmlspecialchars($data['content']) ?>"</textarea>
+
                                         </div>
                                         <div class="modal-footer">
                                             <div class="col-xs-12 form-group">
-                                                <a href="index.php?action=editPost&amp;id=<?=$data['id']?>"> <input type="submit" class="btn btn-primary" value="Enregistrer"></a>
+                                                <a href="index.php?action=editPost&amp;id=<?= $data['id'] ?>"> <input
+                                                            type="submit" class="btn btn-primary"
+                                                            value="Enregistrer"></a>
                                             </div>
                                         </div>
                                     </form>
@@ -68,16 +75,20 @@ while ($data = $posts->fetch()){
                 </div>
 
 
-                <div class="modal fade" id="deletePost" >
+                <div class="modal fade" id="deletePost">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header"><h4>Confirmation</h4></div>
                             <div class="modal-body">
-                                <p><span class="glyphicon glyphicon-alert"></span> Etes-vous sûr de vouloir effacer de chapitre?</p>
+                                <p><span class="glyphicon glyphicon-alert"></span> Etes-vous sûr de vouloir effacer de
+                                    chapitre?</p>
                             </div>
                             <div class="modal-footer">
-                                <a href="index.php?action=displayEditForm"><input type="submit" class="btn btn-info" value="Annuler">
-                                    <a href="index.php?action=deletePost&amp;id=<?=$data['id']?>"><input type="submit" class="btn btn-danger" value="Effacer"></a>
+                                <a href="index.php?action=displayEditForm"><input type="submit" class="btn btn-info"
+                                                                                  value="Annuler"></a>
+                                <a href="index.php?action=deletePost&amp;id=<?= $data['id'] ?>"><input type="submit"
+                                                                                                       class="btn btn-danger"
+                                                                                                       value="Effacer"></a>
                             </div>
                         </div>
                     </div>
@@ -86,15 +97,14 @@ while ($data = $posts->fetch()){
         </div>
     </div>
 
-
+    <?php
+    }
+    ?>
 
 
 
     <?php $content = ob_get_clean(); ?>
 
     <?php require('View/template.php'); ?>
-    <?php
-}
-$posts->closeCursor();
-?>
+
 </div>

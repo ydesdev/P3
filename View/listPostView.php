@@ -27,7 +27,7 @@ $title = 'Billet simple pour l\'Alaska'; ?>
 
 <?php
 
-while ($data = $posts->fetch()){
+foreach ($posts as $data) {
 
     ?>
         <div class="row">
@@ -41,7 +41,7 @@ while ($data = $posts->fetch()){
     <?php
 
 }
-$posts->closeCursor();
+
 ?>
 <?php $content = ob_get_clean(); ?>
 

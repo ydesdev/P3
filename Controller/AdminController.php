@@ -83,7 +83,7 @@ class AdminController
             throw new Exception('Impossible d\'ajouter ce chapitre. Tous les paramètres sont-ils bien définis? !');
         } else {
             header('Location: index.php?action=listPosts');
-        }
+            }
 
     }
 
@@ -129,7 +129,21 @@ class AdminController
         $flags = $currentStanding->reviewFlaggedComments();
 
         require('View/Admin/flaggedCommentsView.php');
+    }
 
+    public function okComment($id)
+    {
+    $vindicatedComment= new CommentManager();
+    $vindicatedComment-> validateComment($id);
+
+        header('Location: index.php?action=reviewComments');
+    }
+public function deleteComment($id)
+    {
+    $deletedComment= new CommentManager();
+    $deletedComment-> deleteComment($id);
+
+        header('Location: index.php?action=reviewComments');
     }
 
     public function logOut()

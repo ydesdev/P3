@@ -69,7 +69,10 @@ class AdminRouter extends MainRouter
                             }
                             break;
                         case "okComment":
-                            $this->adminController->okComment();
+                            $this->adminController->okComment($_GET['id']);
+                            break;
+                        case "deleteComment":
+                            $this->adminController->deleteComment($_GET['id']);
                             break;
                         case"logOff":
                             $this->adminController->logOut();

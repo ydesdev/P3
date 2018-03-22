@@ -13,10 +13,8 @@ $title = 'Billet simple pour l\'Alaska'; ?>
     <div class="row col-xs-offset-1 col-xs-10">
         <div class="panel fade in collapse" >
             <div class="panel-heading">
-                <button type="button" class="close" data-toggle="collapse" data-dismiss="panel">
-                    <span aria-hidden="true"></span>
-                    <span class="sr-only">Close</span>
-                </button>&times
+                <a class="close" href="index.php?action=accessAdmin"> <span class="glyphicon glyphicon-remove-circle"></span></a>
+
                 <h2>Ecrire un nouveau chapitre</h2></div>
             <div class="panel-body">
                 <form action="index.php?action=savePost" method="post">

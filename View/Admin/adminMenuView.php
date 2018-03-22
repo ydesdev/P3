@@ -46,13 +46,17 @@ $title = 'Admin billet simple pour l\'Alaska'; ?>
             <div class="panel-body">
                 <img src="Public/photos/bookAndGlasses.jpg" class="img-thumbnail" alt="bookAndGlasses">
             </div>
+            <div class="panel-footer">
             <a href="index.php?action=reviewComments">Voir tous les commentaires signalés et les traiter</a>
+            </div>
         </div>
         <div class="panel panel-default col-md-offset-2 col-md-3">
             <div class="panel-body">
                 <img src="Public/photos/Envelope.jpg" class="img-thumbnail" alt="Envelope">
             </div>
+            <div class="panel-footer">
             <a href="mailto:contact@skillbook.com">Nous contacter</a>
+            </div>
         </div>
 
     </div>

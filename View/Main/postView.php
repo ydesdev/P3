@@ -7,12 +7,9 @@
         <div class="row col-md-offset-2 col-md-8">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                <button type="button" class="close" data-dismiss="panel">
-                    <span aria-hidden="true">&times;</span>
-                    <span class="sr-only">Close</span>
-                </button>
+                    <a class="close" href="index.php?action=accessAdmin"> <span class="glyphicon glyphicon-remove-circle"></span></a>
 
-                <h1> <?= htmlspecialchars($post['title']) ?> </h1>
+                    <h1> <?= htmlspecialchars($post['title']) ?> </h1>
                 </div>
                 <div class="panel-body">
                     <p><?= nl2br(htmlspecialchars($post['content'])) ?> </p>

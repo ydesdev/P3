@@ -116,7 +116,7 @@ class AdminController
         if ($succesfulRemoval == false) {
             throw new Exception('Impossible d\'effacer le texte. Tous les paramètres sont-ils bien définis? !');
         } else {
-            header('index.php?action=accessAdmin');
+            header('Location: index.php?action=displayEditForm');
         }
 
     }

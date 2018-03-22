@@ -19,7 +19,7 @@
                 <a class="btn btn-info btn-xs" href="index.php?action=accessAdmin">Accès admin</a>
                 <? if (isset($_SESSION['user'])) {
                     ?>
-                <a class="btn btn-default btn-xs" href="index.php?action=logOff">Déconnexion</a>
+                <a class="btn btn-warning btn-xs" href="index.php?action=logOff">Déconnexion</a>
                <? }
                ?>
             </div>

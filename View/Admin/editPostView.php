@@ -36,7 +36,7 @@ foreach ($posts as $data)
                     <td class="col-md-1"><input type="submit" class="btn btn-primary btn-xs" data-toggle="modal"
                                                 data-target="#editPost<?= $data['id'] ?>" value="Modifier"></td>
                     <td class="col-md-1"><input type="submit" class="btn btn-danger btn-xs" data-toggle="modal"
-                                                data-target="#deletePost" value="Effacer"></a></td>
+                                                data-target="#deletePost<?= $data['id'] ?>" value="Effacer"></a></td>
                 </tr>
                 <div class="modal fade" id="editPost<?= $data['id'] ?>">
                     <div class="modal-dialog modal-lg">
@@ -75,7 +75,7 @@ foreach ($posts as $data)
                 </div>
 
 
-                <div class="modal fade" id="deletePost">
+                <div class="modal fade" id="deletePost<?= $data['id'] ?>">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header"><h4>Confirmation</h4></div>

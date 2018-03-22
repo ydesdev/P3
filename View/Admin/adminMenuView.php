@@ -7,12 +7,13 @@ $title = 'Admin billet simple pour l\'Alaska'; ?>
 <?php ob_start(); ?>
 <div class="container">
     <div class="row">
-        <div class="col-md-offset-2 col-md-10">
-
-<h1> Billet simple pour l'Alaska</h1>
+        <div class="col-md-offset-3 col-md-9">
+            <h1> Billet simple pour l'Alaska</h1>
+        </div>
+        <div class="col-md-offset-3 col-md-9">
+            <h2> Bonjour Jean, </h2>
         </div>
 
-    <h2> Bonjour Jean, </h2>
     <div class="row">
          <div class="panel panel-default col-md-offset-1 col-md-3">
                 <div class="panel-body">
@@ -41,8 +42,19 @@ $title = 'Admin billet simple pour l\'Alaska'; ?>
         </div>
     </div>
     <div class="row">
-        <a href="index.php?action=reviewComments">Voir tous les commentaires signalés et les traiter</a>
-        <a href="mailto:contact@skillbook.com">Nous contacter</a>
+        <div class="panel panel-default col-md-offset-2 col-md-3">
+            <div class="panel-body">
+                <img src="Public/photos/bookAndGlasses.jpg" class="img-thumbnail" alt="bookAndGlasses">
+            </div>
+            <a href="index.php?action=reviewComments">Voir tous les commentaires signalés et les traiter</a>
+        </div>
+        <div class="panel panel-default col-md-offset-2 col-md-3">
+            <div class="panel-body">
+                <img src="Public/photos/Envelope.jpg" class="img-thumbnail" alt="Envelope">
+            </div>
+            <a href="mailto:contact@skillbook.com">Nous contacter</a>
+        </div>
+
     </div>
 </div>
 

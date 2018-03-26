@@ -2,8 +2,9 @@
 require_once('Model/PostManager.php');
 require_once('Model/CommentManager.php');
 require_once('Model/UserManager.php');
+require_once('Controller/Controller.php');
 
-class MainController
+class MainController extends Controller
 {
 
     public function listPosts()
@@ -22,8 +23,14 @@ class MainController
 
         $post = $postManager->getPost($_GET['id']);
         $comments = $commentManager->getComments($_GET['id']);
-
+        $posts = $postManager->getPosts();
         require('View/Main/postView.php');
+    }
+
+    public function nextChapter()
+    {
+        $postManager = new PostManager();
+
     }
 
 
@@ -54,8 +61,10 @@ class MainController
     {
         $commentManager = new CommentManager();
         $flaggedComment = $commentManager->flagComment($id);
+        $this->setFlashMessage("Commentaire signalé à l'administrateur");
         if ($flaggedComment) {
-            header('Location: index.php?action=post&id=' . $flaggedComment['post_id']);
+            $this->redirect('post', $flaggedComment['post_id']);
+            //header('Location: index.php?action=post&id=' . $flaggedComment['post_id']);
         } else {
             throw new Exception(' Ce commentaire n\'existe pas');
         }

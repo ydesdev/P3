@@ -4,10 +4,15 @@
 
 <div class="container">
     <div class="row">
-        <div class="row col-md-offset-2 col-md-8">
+
+        <div class="row col-md-1 chevron">
+            <form>
+                <a href="index.php?action=previousChapter"><h1> < </h1></a></form></div>
+
+        <div class="row col-md-8">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <a class="close" href="index.php?action=accessAdmin"> <span class="glyphicon glyphicon-remove-circle"></span></a>
+                    <a class="close" href="index.php?action=listPosts"> <span class="glyphicon glyphicon-remove-circle"></span></a>
 
                     <h1> <?= htmlspecialchars($post['title']) ?> </h1>
                 </div>
@@ -16,8 +21,34 @@
 
                 </div>
             </div>
+        </div>
+        <div class="row col-md-offset-1 col-md-2 chevron"><a href="index.php?action=previousChapter"><h1> > </h1></a></div>
+    </div>
     <div class="row">
-        <div class="row col-md-offset-2 col-md-8">
+                <aside class="col-lg-offset-9 col-lg-3">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                  <?php
+
+                foreach ($posts as $data) {
+
+                    ?>
+
+                                <h5><a href="index.php?action=post&amp;id=<?=$data['id']?>">
+                                        <?= htmlspecialchars($data['title'])?> </a></h5>
+
+                    <?php
+
+                    }
+
+                    ?>
+                        </div>
+                    </div>
+                </aside>
+        </div>
+
+    <div class="row">
+        <div class="row col-md-offset-1 col-md-8">
             <div class="panel panel-default">
                  <div class="panel-heading">
                     <h2> Commentaires</h2>

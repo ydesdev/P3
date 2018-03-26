@@ -11,11 +11,12 @@
 require_once('Model/PostManager.php');
 require_once('Model/CommentManager.php');
 require_once('Model/UserManager.php');
+require_once('Controller/Controller.php');
 
 /**
  * Class AdminController
  */
-class AdminController
+class AdminController extends  Controller
 {
 
 //User functions
@@ -100,7 +101,7 @@ class AdminController
         if ($succesfulEdition == false) {
             throw new Exception('Impossible d\'éditer le texte. Tous les paramètres sont-ils bien définis? !');
         } else {
-            header('Location: index.php?action=listPosts');
+            $this->redirect('listPosts');
         }
 
     }
@@ -127,6 +128,7 @@ class AdminController
     {
         $currentStanding = new CommentManager();
         $flags = $currentStanding->reviewFlaggedComments();
+        $flags = $this->commentManager->reviewFlaggedComments();
 
         require('View/Admin/flaggedCommentsView.php');
     }

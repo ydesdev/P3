@@ -17,3 +17,11 @@ body {
 .table {
     padding: 5px;
 }
+
+.chevron {
+    font-size: 150px;
+}
+
+.index {
+    padding: 10px;
+}

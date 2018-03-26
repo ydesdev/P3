@@ -58,6 +58,13 @@ class MainRouter
                         break;
                     case "flagComment":
                         $this->mainController->flagComment($_GET['id']);
+                        break;
+                    case "nextChapter":
+                        $this->mainController->nextChapter();
+                        break;
+                    case "previousChapter":
+                        $this->mainController->nextChapter();
+                        break;
 
                     }
             }

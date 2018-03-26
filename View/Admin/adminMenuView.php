@@ -47,7 +47,7 @@ $title = 'Admin billet simple pour l\'Alaska'; ?>
                 <img src="Public/photos/bookAndGlasses.jpg" class="img-thumbnail" alt="bookAndGlasses">
             </div>
             <div class="panel-footer">
-            <a href="index.php?action=reviewComments">Voir tous les commentaires signalés et les traiter</a>
+            <a href="index.php?action=reviewComments">Modérer les commentaires signalés</a>
             </div>
         </div>
         <div class="panel panel-default col-md-offset-2 col-md-3">

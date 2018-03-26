@@ -19,6 +19,8 @@ $title = 'Billet simple pour l\'Alaska'; ?>
 <div class="container">
     <div class="row">
         <div class="row col-xs-offset-2 col-xs-10">
+
+            container.
             <h2> Editer un chapitre</h2>
         </div>
     </div>

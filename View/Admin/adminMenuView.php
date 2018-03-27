@@ -10,10 +10,12 @@ $title = 'Admin billet simple pour l\'Alaska'; ?>
         <div class="col-md-offset-3 col-md-9">
             <h1> Billet simple pour l'Alaska</h1>
         </div>
+    </div>
+    <div class="row">
         <div class="col-md-offset-3 col-md-9">
-            <h2> Bonjour Jean, </h2>
+            <h3> Bonjour Jean! </h3>
         </div>
-
+    </div>
     <div class="row">
          <div class="panel panel-default col-md-offset-1 col-md-3">
                 <div class="panel-body">
@@ -50,6 +52,7 @@ $title = 'Admin billet simple pour l\'Alaska'; ?>
             <a href="index.php?action=reviewComments">Modérer les commentaires signalés</a>
             </div>
         </div>
+
         <div class="panel panel-default col-md-offset-2 col-md-3">
             <div class="panel-body">
                 <img src="Public/photos/Envelope.jpg" class="img-thumbnail" alt="Envelope">
@@ -60,8 +63,11 @@ $title = 'Admin billet simple pour l\'Alaska'; ?>
         </div>
 
     </div>
-</div>
+
+
 
 <?php $content = ob_get_clean(); ?>
 
 <?php require('View/template.php'); ?>
+</div>
+

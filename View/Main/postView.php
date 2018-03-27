@@ -7,7 +7,7 @@
 
         <div class="row col-md-1 chevron">
             <form>
-                <a href="index.php?action=previousChapter"><h1> < </h1></a></form></div>
+                <a href="index.php?action=previousChapter&amp;id=<?=$post['id']?>"><h1> < </h1></a></form></div>
 
         <div class="row col-md-8">
             <div class="panel panel-default">
@@ -22,7 +22,7 @@
                 </div>
             </div>
         </div>
-        <div class="row col-md-offset-1 col-md-2 chevron"><a href="index.php?action=previousChapter"><h1> > </h1></a></div>
+        <div class="row col-md-offset-1 col-md-2 chevron"><a href="index.php?action=nextChapter&amp;id=<?=$post['id']?>"><h1> > </h1></a></div>
     </div>
     <div class="row">
                 <aside class="col-lg-offset-9 col-lg-3">
@@ -51,7 +51,7 @@
         <div class="row col-md-offset-1 col-md-8">
             <div class="panel panel-default">
                  <div class="panel-heading">
-                    <h2> Commentaires</h2>
+                    <h3> Commentaires</h3>
                      <input type="submit" class="btn btn-info btn-xs" data-toggle="modal" data-target="#addComment" value="Ajouter un commentaire">
                 </div>
                 <div class="panel-body">
@@ -91,6 +91,7 @@
                             <span class="sr-only">Close</span>
                     </button>
                         <h4> Ajouter un commentaire</h4>
+                </div>
                 <div class="modal-body">
                     <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
                         <div class="col-xs-12 form-group">
@@ -102,13 +103,18 @@
                             <textarea id="comment" name="comment"></textarea>
                         </div>
                         <input type="submit" class="btn btn-info btn-xs" value="Ajouter le commentaire">
-                    </form><p><a href="index.php"> Retour à l'index</a></p>
-                </div>
+                    </form>
+                    <div class="modal-footer">
+                    <h4><a href="index.php"> Retour à l'index</a></h4>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        </div>
+
 
 <?php $content = ob_get_clean(); ?>
 
 <?php require('View/template.php'); ?>
+</div>
+

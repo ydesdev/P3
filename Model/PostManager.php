@@ -22,6 +22,15 @@ class PostManager extends Manager
         return $post;
     }
 
+    public function getChapterId()
+    {
+        $db= $this->dbConnect();
+        $req = $db->query('SELECT id AS creation_date_fr FROM posts ORDER BY creation_date');
+
+        return $req->fetchAll();
+
+    }
+
     public function createPost($title, $content)
     {
         $db = $this->dbConnect();

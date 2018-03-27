@@ -24,14 +24,54 @@ class MainController extends Controller
         $post = $postManager->getPost($_GET['id']);
         $comments = $commentManager->getComments($_GET['id']);
         $posts = $postManager->getPosts();
+
         require('View/Main/postView.php');
     }
 
     public function nextChapter()
     {
         $postManager = new PostManager();
+        $commentManager = new CommentManager();
 
+        $nextPostId = $_GET['id'] +1;
+        $post= $postManager->getPost($nextPostId);
+        $comments = $commentManager->getComments($nextPostId);
+        $posts = $postManager->getPosts();
+
+        header('Location: index.php?action=post&id=' . $nextPostId);
     }
+
+    public function previousChapter()
+    {
+        $postManager = new PostManager();
+        $commentManager = new CommentManager();
+
+        $prevPostId = $_GET['id'] -1;
+        $post= $postManager->getPost($prevPostId);
+        $comments = $commentManager->getComments($prevPostId);
+        $posts = $postManager->getPosts();
+
+        header('Location: index.php?action=post&id=' . $prevPostId);
+    }
+
+
+/*$nextPostId= 0;
+        $previousPostId= 0;
+        $isCurrentPost = 0;
+foreach($posts as $currentPost) {
+
+            if ($isCurrentPost == 1) {
+                $nextPostId = $currentPost['id'];
+                break;
+            }
+            if ($currentPost['id'] = $_GET['id'] and $isCurrentPost == 0) {
+                $isCurrentPost = 1;
+            }
+            if ($isCurrentPost == 0) {
+                $previousPostId = $currentPost['id'];
+            }
+        }
+*/
 
 
     public function addComment($postId, $author, $comment)

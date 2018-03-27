@@ -60,10 +60,18 @@ class MainRouter
                         $this->mainController->flagComment($_GET['id']);
                         break;
                     case "nextChapter":
+                        if (isset($_GET['id']) && $_GET['id'] > 0) {
                         $this->mainController->nextChapter();
+                        } else {
+                            throw new Exception('Il n\'y a pas de chapitre à afficher!');
+                        }
                         break;
                     case "previousChapter":
-                        $this->mainController->nextChapter();
+                        if (isset($_GET['id']) && $_GET['id'] > 0) {
+                            $this->mainController->previousChapter();
+                        } else {
+                            throw new Exception('Il n\'y a pas de chapitre à afficher!');
+                        }
                         break;
 
                     }

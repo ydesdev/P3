@@ -7,6 +7,14 @@
     <!--Optimal theme -->
     <link rel="stylesheet" href="Public/bootstrap/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="Public/customcss.css">
+    <script
+            src='https://code.jquery.com/jquery-2.2.4.min.js'
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+    <script src='Public/tinymce/js/tinymce/tinymce.min.js'></script>
+    <script src='Public/tinymce/js/tinymce/jquery.tinymce.min.js'></script>
+
+<!--     <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script> -->
 
 </head>
 <header>
@@ -16,12 +24,12 @@
 
         <div class="navbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Accueil</a></li>
-                <li><a href="#">Ecrire</a></li>
-                <li><a href="#">Editer</a></li>
-                <li><a href="#">Commenter</a></li>
-                <li><a href="#">Modérer</a></li>
-                <li><a href="#">Contacter</a></li>
+                <li class="active"><a href="index.php?action=accessAdmin">Accueil</a></li>
+                <li><a href="index.php?action=writePost">Ecrire</a></li>
+                <li><a href="index.php?action=displayEditForm">Editer</a></li>
+                <li><a href="index.php?action=listPosts">Commenter</a></li>
+                <li><a href="index.php?action=reviewComments">Modérer</a></li>
+                <li><a href="mailto:contact@skillbook.com">Contacter</a></li>
             </ul>
         </div>
 
@@ -58,6 +66,14 @@
 
 <script src="Public/bootstrap/js/jquery-3.3.1.js"></script>
 <script src="Public/bootstrap/js/bootstrap.min.js"></script>
+<script>
+    tinymce.init({
+        selector: '.tinymce',
+        entity_encoding:"raw"
+
+    });
+
+</script>
 
 </html>
 

@@ -137,6 +137,7 @@ class AdminController extends  Controller
     {
     $vindicatedComment= new CommentManager();
     $vindicatedComment-> validateComment($id);
+    $this->setFlashMessage("Commentaire validé");
 
         header('Location: index.php?action=reviewComments');
     }
@@ -144,6 +145,7 @@ public function deleteComment($id)
     {
     $deletedComment= new CommentManager();
     $deletedComment-> deleteComment($id);
+    $this->setFlashMessage("Commentaire supprimé");
 
         header('Location: index.php?action=reviewComments');
     }

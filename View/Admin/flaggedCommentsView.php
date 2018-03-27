@@ -81,8 +81,6 @@
 <?php require('View/template.php'); ?>
 
 
-<!--
-//un lien de retour vers l'admin
---!>
+
 
 

@@ -24,7 +24,7 @@ $title = 'Billet simple pour l\'Alaska'; ?>
                     </div>
                     <div class="col-xs-12 form-group">
                         <label for="content"> Texte :</label>
-                        <textarea class="form-control" rows="10" name="content" id="content"></textarea>
+                        <textarea class="form-control tinymce" rows="10" name="content" id="content"></textarea>
                     </div>
                     <div class="col-xs-12 form-group">
                         <input type="submit" class="btn btn-primary" value="Enregistrer">

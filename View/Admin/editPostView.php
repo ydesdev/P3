@@ -21,6 +21,7 @@ $title = 'Billet simple pour l\'Alaska'; ?>
         <div class="row col-xs-offset-2 col-xs-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
+                    <a class="close" href="index.php?action=accessAdmin"> <span class="glyphicon glyphicon-remove-circle"></span></a>
                    <h2> Editer un chapitre</h2>
                 </div>
                 <div class="panel-body">

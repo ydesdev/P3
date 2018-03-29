@@ -108,7 +108,7 @@ class AdminController extends  Controller
         if ($succesfulEdition == false) {
             throw new Exception('Impossible d\'éditer le texte. Tous les paramètres sont-ils bien définis? !');
         } else {
-            $this->redirect('listPosts');
+            $this->redirect('displayEditForm');
         }
 
     }

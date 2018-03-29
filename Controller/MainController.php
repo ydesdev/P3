@@ -99,16 +99,6 @@ foreach($posts as $currentPost) {
         }
     }
 
-    public function getComment($id)
-    {
-
-        $commentManager = new CommentManager();
-        $selectedComment = $commentManager->getComment($id);
-
-        require('View/Admin/amendCommentView.php');
-    }
-
-
     public function flagComment($id)
     {
         $commentManager = new CommentManager();

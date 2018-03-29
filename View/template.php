@@ -20,25 +20,60 @@
 <header>
     <?php
     if (isset($_SESSION['user'])) : ?>
-    <!--.navbar>ul.nav.navbar-nav>li*5>a[href=#]!-->
+    <!--emmet shorcut example: .navbar>ul.nav.navbar-nav>li*5>a[href=#]!-->
 
         <div class="navbar navbar-inverse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="index.php?action=accessAdmin">Accueil</a></li>
-                <li><a href="index.php?action=writePost">Ecrire</a></li>
-                <li><a href="index.php?action=displayEditForm">Editer</a></li>
-                <li><a href="index.php?action=listPosts">Commenter</a></li>
-                <li><a href="index.php?action=reviewComments">Modérer</a></li>
-                <li><a href="index.php?action=displayNotes">Bloc-notes</a></li>
-                <li><a href="mailto:contact@skillbook.com">Contacter</a></li>
-
-            </ul>
-
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#adminMenu" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="adminMenu">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.php?action=accessAdmin">Accueil</a></li>
+                        <li><a href="index.php?action=writePost">Ecrire</a></li>
+                        <li><a href="index.php?action=displayEditForm">Editer</a></li>
+                        <li><a href="index.php?action=listPosts">Commenter</a></li>
+                        <li><a href="index.php?action=reviewComments">Modérer</a></li>
+                        <li><a href="index.php?action=displayNotes">Bloc-notes</a></li>
+                        <li><a href="mailto:contact@skillbook.com">Contacter</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
+        <div class="row">
 
+            <div class="col-md-2 pull-right">
+                <a class="btn btn-warning btn-xs" href="index.php?action=logOff">Déconnexion</a>
+            </div>
+        </div>
     <?php endif; ?>
 
+    <?php
+    if (!isset($_SESSION['user'])) : ?>
+        <div class="row">
+            <div class="col-md-offset-1 col-md-5">
+                <h1> Aller Simple Pour l'Alaska</h1>
+            </div>
+            <div class="col-md-4">
+                <h3> Jean Forteroche</h3>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-offset-1 col-md-5">
+                <blockquote class="blockquote">
+                    <p> Partir pour se perdre. Se perdre pour se trouver. </p>
+                </blockquote>
+            </div>
+         </div>
+
+    <?php endif; ?>
 
 </header>
 <body>
@@ -54,17 +89,14 @@
 
 </body>
 <footer>
+    <?php
+    if (!isset($_SESSION['user'])) : ?>
     <div class="navbar navbar-fixed-bottom">
-        <div class="col-sm-offset-10 col-sm-2">
-            <a class="btn btn-info btn-xs" href="index.php?action=accessAdmin">Accès admin</a>
-            <?php if (isset($_SESSION['user'])) {
-                ?>
-                <a class="btn btn-warning btn-xs" href="index.php?action=logOff">Déconnexion</a>
-            <?php }
-            ?>
+        <div class="col-md-2">
+        <a class="btn btn-info btn-xs" href="index.php?action=accessAdmin">Accès admin</a>
         </div>
     </div>
-
+    <?php endif; ?>
 </footer>
 
 

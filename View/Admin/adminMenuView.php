@@ -7,65 +7,63 @@ $title = 'Admin billet simple pour l\'Alaska'; ?>
 <?php ob_start(); ?>
 <div class="container">
     <div class="row">
-        <div class="col-md-offset-3 col-md-9">
-            <h1> Billet simple pour l'Alaska</h1>
-        </div>
+        <div class="col-xs-offset-1 col-xs-10 text-center admin-spacing"><h2>Votre espace d'administration</div>
     </div>
+
+
     <div class="row">
-         <div class="panel panel-default col-xs-offset-1 col-xs-4 col-md-offset-1 col-md-3">
-                <div class="panel-body">
-                    <img src="Public/photos/typingMachin.jpg" class="img-responsive img-rounded" alt="Typing Machine">
-                </div>
-                <div class="panel-footer">
-                     <a href="index.php?action=writePost"> Ecrire un nouveau billet</a>
-                </div>
-         </div>
-
-        <div class="panel panel-default col-xs-offset-1 col-xs-4 col-md-offset-1 col-md-3">
-                <div class="panel-body">
-                    <img src="Public/photos/editing.jpg" class="img-responsive img-rounded" alt="Editing Notebook">
-                </div>
-                <div class="panel-footer">
-                     <a href="index.php?action=displayEditForm">Modifier ou effacer un billet</a>
-                </div>
+        <div class="col-xs-5 col-sm-4 col-lg-3">
+             <div class="panel panel-default tiles">
+                    <div class="panel-body">
+                        <img src="Public/photos/typingMachin.jpg" class="img-responsive img-rounded center-block" alt="Typing Machine">
+                        <a href="index.php?action=writePost"> <h5> Ecrire un nouveau billet</h5></a>
+                    </div>
+             </div>
         </div>
-        <div class="panel panel-default col-xs-offset-1 col-xs-4 col-md-offset-1 col-md-3">
-            <div class="panel-body">
-                <img src="Public/photos/openBook.jpg" class="img-responsive img-rounded" alt="Open Book">
+
+        <div class="col-xs-5 col-sm-4 col-lg-3">
+            <div class="panel panel-default tiles">
+                <div class="panel-body">
+                    <img src="Public/photos/editing.jpg" class="img-responsive img-rounded center-block" alt="Editing Notebook">
+                     <a href="index.php?action=displayEditForm"><h5>Modifier ou effacer un billet</h5></a>
+                </div>
             </div>
-            <div class="panel-footer">
-                <a href="index.php?action=listPosts">Voir un billet et ses commentaires</a>
+        </div>
+        <div class="col-xs-5 col-sm-4 col-lg-3">
+            <div class="panel panel-default tiles">
+                <div class="panel-body">
+                    <img src="Public/photos/openBook.jpg" class="img-responsive img-rounded center-block" alt="Open Book">
+                    <a href="index.php?action=listPosts"><h5> Voir un billet et ses commentaires</h5></a>
+                </div>
             </div>
+        </div>
+
+        <div class="col-xs-5 col-sm-4 col-lg-3">
+            <div class="panel panel-default tiles">
+                <div class="panel-body">
+                <img src="Public/photos/bookAndGlasses.jpg" class="img-responsive img-rounded center-block" alt="bookAndGlasses">
+                <a href="index.php?action=reviewComments"><h5> Modérer les commentaires signalés </h5></a>
+                </div>
+             </div>
+        </div>
+        <div class="col-xs-5 col-sm-4 col-lg-3">
+            <div class="panel panel-default tiles">
+                <div class="panel-body">
+                <img src="Public/photos/Notepad.jpg" class="img-responsive img-rounded center-block" alt="Notepad">
+                <a href="index.php?action=displayNotes"><h5> Bloc-notes</h5></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-5 col-sm-4 col-lg-3">
+            <div class="panel panel-default tiles">
+                <div class="panel-body">
+                <img src="Public/photos/Envelope.jpg" class="img-responsive img-rounded center-block" alt="Envelope">
+                <a href="mailto:contact@skillbook.com"><h5> Besoin de nous contacter?</h5></a>
+                </div>
+             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="panel panel-default col-xs-offset-1 col-xs-4 col-md-offset-1 col-md-3">
-            <div class="panel-body">
-                <img src="Public/photos/bookAndGlasses.jpg" class="img-responsive img-rounded" alt="bookAndGlasses">
-            </div>
-            <div class="panel-footer">
-            <a href="index.php?action=reviewComments">Modérer les commentaires signalés</a>
-            </div>
-        </div>
-        <div class="panel panel-default col-xs-offset-1 col-xs-4 col-md-offset-1 col-md-3">
-            <div class="panel-body">
-                <img src="Public/photos/Notepad.jpg" class="img-responsive img-rounded" alt="Notepad">
-            </div>
-            <div class="panel-footer">
-                <a href="index.php?action=displayNotes">Bloc-notes</a>
-            </div>
-        </div>
-
-        <div class="panel panel-default col-xs-offset-1 col-xs-4 col-md-offset-1 col-md-3">
-            <div class="panel-body">
-                <img src="Public/photos/Envelope.jpg" class="img-responsive img-rounded" alt="Envelope">
-            </div>
-            <div class="panel-footer">
-            <a href="mailto:contact@skillbook.com">Nous contacter</a>
-            </div>
-        </div>
-
-    </div>
+</
 
 
 

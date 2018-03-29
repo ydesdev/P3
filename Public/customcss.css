@@ -2,13 +2,19 @@ body {
     background-image: url(photos/quietColdLake.jpg);
     background-size: cover;
 }
-
-
+.admin-spacing {
+    margin-bottom: 30px !important;
+}
+.tiles {
+    padding: 8px;
+    margin: 8px;
+    ext-align: center;
+}
 .panel {
     background-color: #A3B2BE;
-    opacity: 0.8;
+    opacity: 0.9;
+    border-radius: 7px;
 }
-
 
 .jumbotron {
     background-color: #A3B2BE;

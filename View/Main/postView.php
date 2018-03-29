@@ -4,17 +4,17 @@
 
 <div class="container">
     <div class="row">
-
-        <div class="row col-md-1 chevron">
+        <div class="col-md-1 chevron">
             <form>
-                <a href="index.php?action=previousChapter&amp;id=<?=$post['id']?>"><h1> < </h1></a></form></div>
-
-        <div class="row col-md-8">
+                <a href="index.php?action=previousChapter&amp;id=<?=$post['id']?>"><h1> < </h1></a>
+            </form>
+        </div>
+        <div class="col-md-8">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <a class="close" href="index.php?action=listPosts"> <span class="glyphicon glyphicon-remove-circle"></span></a>
 
-                    <h1> <?= htmlspecialchars($post['title']) ?> </h1>
+                    <h2> <?= htmlspecialchars($post['title']) ?> </h2>
                 </div>
                 <div class="panel-body">
                     <p><?= nl2br(htmlspecialchars($post['content'])) ?> </p>
@@ -25,30 +25,10 @@
         <div class="row col-md-offset-1 col-md-1 chevron"><a href="index.php?action=nextChapter&amp;id=<?=$post['id']?>"><h1>   > </h1></a></div>
 
 
-                <aside class="col-lg-offset-1 col-lg-2">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                  <?php
-
-                foreach ($posts as $data) {
-
-                    ?>
-
-                                <h5><a href="index.php?action=post&amp;id=<?=$data['id']?>">
-                                        <?= htmlspecialchars($data['title'])?> </a></h5>
-
-                    <?php
-
-                    }
-
-                    ?>
-                        </div>
-                    </div>
-                </aside>
     </div>
 
     <div class="row">
-        <div class="row col-md-offset-1 col-md-8">
+        <div class="col-md-offset-1 col-md-8">
             <div class="panel panel-default">
                  <div class="panel-heading">
                     <h3> Commentaires</h3>
@@ -66,21 +46,33 @@
                             <td><p><?= nl2br(htmlspecialchars(trim($comment['comment']))) ?></p></td>
                            <td><a href="index.php?action=flagComment&amp;id=<?=$comment['id']?>"><input type="submit" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#flagPost" value="Signaler"></a></td>
                        </tr>
-        <?php
+                    <?php
                         }
 
-}else{ ?>
+                    }else{ ?>
 
-    <p> Pas de commentaire </p>
-
+                    <p> Pas de commentaire </p>
                         <?php
-
                     }
                     ?>
                     </table>
                 </div>
             </div>
         </div>
+        <aside class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <?php
+                    foreach ($posts as $data) {
+                        ?>
+                        <h5><a href="index.php?action=post&amp;id=<?=$data['id']?>">
+                                <?= htmlspecialchars($data['title'])?> </a></h5>
+                        <?php
+                    }
+                    ?>
+                </div>
+            </div>
+        </aside>
     </div>
     <div class="modal fade" id="addComment">
         <div class="modal-dialog modal-lg">
@@ -110,7 +102,7 @@
                 </div>
             </div>
         </div>
-        </div>
+    </div>
 
 
 <?php $content = ob_get_clean(); ?>

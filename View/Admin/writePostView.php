@@ -11,11 +11,12 @@ $title = 'Billet simple pour l\'Alaska'; ?>
 
 <div class="container">
     <div class="row col-xs-offset-1 col-xs-10">
-        <div class="panel fade in collapse" >
+        <div class="panel panel-default fade in collapse" >
             <div class="panel-heading">
                 <a class="close" href="index.php?action=accessAdmin"> <span class="glyphicon glyphicon-remove-circle"></span></a>
 
-                <h2>Ecrire un nouveau chapitre</h2></div>
+                <h2>Ecrire un nouveau chapitre</h2>
+            </div>
             <div class="panel-body">
                 <form action="index.php?action=savePost" method="post">
                     <div class="col-xs-12 form-group">

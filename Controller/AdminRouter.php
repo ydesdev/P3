@@ -74,6 +74,12 @@ class AdminRouter extends MainRouter
                         case "deleteComment":
                             $this->adminController->deleteComment($_GET['id']);
                             break;
+                        case "displayNotes":
+                            $this->adminController->displayNotepad();
+                            break;
+                        case "updateNotes":
+                            $this->adminController->editNotes($_POST['updatedContent']);
+                            break;
                         case"logOff":
                             $this->adminController->logOut();
                             break;

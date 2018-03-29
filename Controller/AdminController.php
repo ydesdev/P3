@@ -68,6 +68,13 @@ class AdminController extends  Controller
         require('View/Admin/editPostView.php');
     }
 
+    public function displayNotepad()
+    {
+        $allNotes = new PostManager();
+        $notes = $allNotes->getNotes();
+        require('View/Admin/noteView.php');
+    }
+
 //Edit functions
 
     /**
@@ -84,7 +91,7 @@ class AdminController extends  Controller
             throw new Exception('Impossible d\'ajouter ce chapitre. Tous les paramètres sont-ils bien définis? !');
         } else {
             header('Location: index.php?action=listPosts');
-            }
+        }
 
     }
 
@@ -135,17 +142,18 @@ class AdminController extends  Controller
 
     public function okComment($id)
     {
-    $vindicatedComment= new CommentManager();
-    $vindicatedComment-> validateComment($id);
-    $this->setFlashMessage("Commentaire validé");
+        $vindicatedComment = new CommentManager();
+        $vindicatedComment->validateComment($id);
+        $this->setFlashMessage("Commentaire validé");
 
         header('Location: index.php?action=reviewComments');
     }
-public function deleteComment($id)
+
+    public function deleteComment($id)
     {
-    $deletedComment= new CommentManager();
-    $deletedComment-> deleteComment($id);
-    $this->setFlashMessage("Commentaire supprimé");
+        $deletedComment = new CommentManager();
+        $deletedComment->deleteComment($id);
+        $this->setFlashMessage("Commentaire supprimé");
 
         header('Location: index.php?action=reviewComments');
     }
@@ -155,5 +163,17 @@ public function deleteComment($id)
         unset($_SESSION['user']);
         header('Location: index.php?action=listPosts');
     }
+
+
+//Notes Admin
+    public function editNotes($content)
+    {
+        $editedNotes = new PostManager();
+        $editedNotes->updateNotes($content);
+
+        $this->redirect('accessAdmin');
+
+    }
 }
+
 

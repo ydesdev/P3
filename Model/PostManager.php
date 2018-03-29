@@ -22,14 +22,6 @@ class PostManager extends Manager
         return $post;
     }
 
-    public function getChapterId()
-    {
-        $db= $this->dbConnect();
-        $req = $db->query('SELECT id AS creation_date_fr FROM posts ORDER BY creation_date');
-
-        return $req->fetchAll();
-
-    }
 
     public function createPost($title, $content)
     {
@@ -51,6 +43,7 @@ class PostManager extends Manager
         return $post;
     }
 
+
     public function deletePost($id)
     {
         $db = $this->dbConnect();
@@ -58,5 +51,23 @@ class PostManager extends Manager
         $deletedPost = $query->execute(array('id' => $id));
 
         return $deletedPost;
+    }
+
+    public function getNotes()
+    {
+        $db = $this->dbConnect();
+        $notes = $db->query('SELECT content AS notes_content FROM notePad WHERE id=1');
+
+        return $notes->fetch();
+
+    }
+
+    public function updateNotes($content)
+    {
+        $db = $this->dbConnect();
+        $query = $db->prepare('UPDATE notePad SET content = :content WHERE id=1');
+        $updatedNotes = $query->execute(array('content' => $content));
+
+        return $updatedNotes;
     }
 }

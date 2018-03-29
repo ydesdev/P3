@@ -22,19 +22,23 @@
     if (isset($_SESSION['user'])) : ?>
     <!--.navbar>ul.nav.navbar-nav>li*5>a[href=#]!-->
 
-        <div class="navbar">
+        <div class="navbar navbar-inverse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.php?action=accessAdmin">Accueil</a></li>
                 <li><a href="index.php?action=writePost">Ecrire</a></li>
                 <li><a href="index.php?action=displayEditForm">Editer</a></li>
                 <li><a href="index.php?action=listPosts">Commenter</a></li>
                 <li><a href="index.php?action=reviewComments">Modérer</a></li>
+                <li><a href="index.php?action=displayNotes">Bloc-notes</a></li>
                 <li><a href="mailto:contact@skillbook.com">Contacter</a></li>
+
             </ul>
+
         </div>
 
 
     <?php endif; ?>
+
 
 </header>
 <body>

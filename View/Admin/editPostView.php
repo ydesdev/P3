@@ -74,14 +74,12 @@ $title = 'Billet simple pour l\'Alaska'; ?>
                             </div>
                             <div class="col-xs-12 form-group">
                                 <label for="content"> Texte :</label>
-                                <textarea class="form-control tinymce" rows="15" name="content" id="content"> <?= htmlspecialchars($data['content']) ?>"</textarea>
+                                <textarea class="form-control tinymce" rows="15" name="content" id="content"> <?= htmlspecialchars($data['content']) ?></textarea>
 
                             </div>
                             <div class="modal-footer">
                                 <div class="col-xs-12 form-group">
-                                    <a href="index.php?action=editPost&amp;id=<?= $data['id'] ?>"> <input
-                                                type="submit" class="btn btn-primary"
-                                                value="Enregistrer"></a>
+                                    <input type="submit" class="btn btn-primary" value="Enregistrer">
                                 </div>
                             </div>
                         </form>
@@ -121,3 +119,4 @@ $title = 'Billet simple pour l\'Alaska'; ?>
     <?php require('View/template.php'); ?>
 
 </div>
+

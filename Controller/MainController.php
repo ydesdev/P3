@@ -38,7 +38,13 @@ class MainController extends Controller
         $comments = $commentManager->getComments($nextPostId);
         $posts = $postManager->getPosts();
 
-        header('Location: index.php?action=post&id=' . $nextPostId);
+        if($post){
+
+        header('Location: index.php?action=post&id=' . $nextPostId);}
+
+        else {
+            throw new Exception(' Plus de chapitre à afficher');
+        }
     }
 
     public function previousChapter()
@@ -51,7 +57,13 @@ class MainController extends Controller
         $comments = $commentManager->getComments($prevPostId);
         $posts = $postManager->getPosts();
 
-        header('Location: index.php?action=post&id=' . $prevPostId);
+        if($post){
+        header('Location: index.php?action=post&id=' . $prevPostId);}
+
+        else {
+            throw new Exception('Pas de chapitre précédent!');
+        }
+
     }
 
 

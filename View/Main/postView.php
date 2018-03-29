@@ -22,10 +22,10 @@
                 </div>
             </div>
         </div>
-        <div class="row col-md-offset-1 col-md-2 chevron"><a href="index.php?action=nextChapter&amp;id=<?=$post['id']?>"><h1> > </h1></a></div>
-    </div>
-    <div class="row">
-                <aside class="col-lg-offset-9 col-lg-3">
+        <div class="row col-md-offset-1 col-md-1 chevron"><a href="index.php?action=nextChapter&amp;id=<?=$post['id']?>"><h1>   > </h1></a></div>
+
+
+                <aside class="col-lg-offset-1 col-lg-2">
                     <div class="panel panel-default">
                         <div class="panel-body">
                   <?php
@@ -45,7 +45,7 @@
                         </div>
                     </div>
                 </aside>
-        </div>
+    </div>
 
     <div class="row">
         <div class="row col-md-offset-1 col-md-8">
@@ -62,8 +62,8 @@
                         foreach ($comments as $comment)
                         {
                     ?>
-                           <td><p><strong><?= htmlspecialchars($comment['author']) ?></strong><br/> le <?= $comment['comment_date_fr'] ?></p></td>
-                            <td><p><?= nl2br(htmlspecialchars($comment['comment']))?></p></td>
+                           <td><p><strong><?= htmlspecialchars(trim($comment['author'])) ?></strong><br/> le <?= $comment['comment_date_fr'] ?></p></td>
+                            <td><p><?= nl2br(htmlspecialchars(trim($comment['comment']))) ?></p></td>
                            <td><a href="index.php?action=flagComment&amp;id=<?=$comment['id']?>"><input type="submit" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#flagPost" value="Signaler"></a></td>
                        </tr>
         <?php

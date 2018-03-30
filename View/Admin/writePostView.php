@@ -10,7 +10,7 @@ $title = 'Billet simple pour l\'Alaska'; ?>
 <?php ob_start(); ?>
 
 <div class="container">
-    <div class="row col-xs-offset-1 col-xs-10">
+    <div class="row col-xs-12 col-md-offset-1 col-md-10">
         <div class="panel panel-default fade in collapse" >
             <div class="panel-heading">
                 <a class="close" href="index.php?action=accessAdmin"> <span class="glyphicon glyphicon-remove-circle"></span></a>

@@ -17,7 +17,7 @@
                     <h2> <?= htmlspecialchars($post['title']) ?> </h2>
                 </div>
                 <div class="panel-body">
-                    <?= nl2br(htmlspecialchars($post['content'])) ?>
+                    <?= htmlspecialchars(strip_tags($post['content']))?>
 
                 </div>
             </div>
@@ -88,13 +88,13 @@
                 </div>
                 <div class="modal-body">
                     <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
-                        <div class="col-xs-12 form-group">
+                        <div class="col-xs-4 form-group">
                             <label for="author">Auteur</label><br/>
-                            <input type="text" id="author" name="author" />
+                            <input class="form-control" type="text" id="author" name="author"/>
                         </div>
-                        <div class="col-xs-12 form-group">
+                        <div class="col-xs-8 form-group">
                             <label for="comment">Commentaire</label><br>
-                            <textarea id="comment" name="comment"></textarea>
+                            <textarea class="form-control" id="comment" name="comment"></textarea>
                         </div>
                         <input type="submit" class="btn btn-info btn-xs" value="Ajouter le commentaire">
                     </form>

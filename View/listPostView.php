@@ -9,21 +9,12 @@ $title = 'Billet simple pour l\'Alaska'; ?>
 
 <?php ob_start(); ?>
 <div class="container">
-    <?php
-    if (!isset($_SESSION['user'])) : ?>
-        <div class="navbar navbar-fixed-bottom">
-            <div class="col-md-2">
-                <a class="btn btn-info btn-xs" href="index.php?action=accessAdmin">Accès admin</a>
-            </div>
-        </div>
-    <?php endif; ?>
-
 
         <div class="row">
             <div class="col-xs-offset-1 col-xs-5">
                 <div class="panel panel-info">
                     <div class="panel-heading">
-                            <h3>Index</h3>
+                            <h3>Table des matières</h3>
                     </div>
                     <div class="panel-body">
 

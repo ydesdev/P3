@@ -58,7 +58,7 @@
     if (!isset($_SESSION['user'])) : ?>
         <div class="row">
             <div class="col-md-offset-1 col-md-5">
-                <h1> Aller Simple Pour l'Alaska</h1>
+                <h1><a href="index.php?action=listPosts"> Billet Simple Pour l'Alaska</a></h1>
             </div>
             <div class="col-md-4">
                 <h3> Jean Forteroche</h3>
@@ -92,7 +92,7 @@
     <?php
     if (!isset($_SESSION['user'])) : ?>
     <div class="navbar navbar-fixed-bottom">
-        <div class="col-xs-offset-1 col-xs-2">
+        <div class="col-xs-2">
         <a class="btn btn-info btn-xs" href="index.php?action=accessAdmin">Accès admin</a>
         </div>
     </div>

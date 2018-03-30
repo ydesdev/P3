@@ -12,7 +12,7 @@ $title = 'Admin billet simple pour l\'Alaska'; ?>
 
 
     <div class="row">
-        <div class="col-xs-5 col-sm-3">
+        <div class="col-xs-6 col-sm-3">
              <div class="panel panel-default">
                     <div class="panel-body">
                         <img src="Public/photos/typingMachin.jpg" class="img-responsive img-rounded center-block" alt="Typing Machine">
@@ -21,7 +21,7 @@ $title = 'Admin billet simple pour l\'Alaska'; ?>
              </div>
         </div>
 
-        <div class="col-xs-5 col-sm-3">
+        <div class="col-xs-6 col-sm-3">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <img src="Public/photos/editing.jpg" class="img-responsive img-rounded center-block" alt="Editing Notebook">
@@ -29,7 +29,7 @@ $title = 'Admin billet simple pour l\'Alaska'; ?>
                 </div>
             </div>
         </div>
-        <div class="col-xs-5 col-sm-3">
+        <div class="col-xs-6 col-sm-3">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <img src="Public/photos/openBook.jpg" class="img-responsive img-rounded center-block" alt="Open Book">
@@ -38,7 +38,7 @@ $title = 'Admin billet simple pour l\'Alaska'; ?>
             </div>
         </div>
 
-        <div class="col-xs-5 col-sm-3">
+        <div class="col-xs-6 col-sm-3">
             <div class="panel panel-default">
                 <div class="panel-body">
                 <img src="Public/photos/bookAndGlasses.jpg" class="img-responsive img-rounded center-block" alt="bookAndGlasses">
@@ -46,7 +46,7 @@ $title = 'Admin billet simple pour l\'Alaska'; ?>
                 </div>
              </div>
         </div>
-        <div class="col-xs-5 col-sm-3">
+        <div class="col-xs-6 col-sm-3">
             <div class="panel panel-default">
                 <div class="panel-body">
                 <img src="Public/photos/Notepad.jpg" class="img-responsive img-rounded center-block" alt="Notepad">
@@ -54,7 +54,7 @@ $title = 'Admin billet simple pour l\'Alaska'; ?>
                 </div>
             </div>
         </div>
-        <div class="col-xs-5 col-sm-3">
+        <div class="col-xs-6 col-sm-3">
             <div class="panel panel-default">
                 <div class="panel-body">
                 <img src="Public/photos/Envelope.jpg" class="img-responsive img-rounded center-block" alt="Envelope">
@@ -63,9 +63,6 @@ $title = 'Admin billet simple pour l\'Alaska'; ?>
              </div>
         </div>
     </div>
-</
-
-
 
 <?php $content = ob_get_clean(); ?>
 

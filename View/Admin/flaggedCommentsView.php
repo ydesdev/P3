@@ -14,6 +14,7 @@
 
         <div class="panel panel-default">
             <div class="panel-heading">
+                <a class="close" href="index.php?action=accessAdmin"> <span class="glyphicon glyphicon-remove-circle"></span></a>
                 <h2> Commentaires signalés</h2>
 
             </div>

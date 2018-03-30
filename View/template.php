@@ -92,7 +92,7 @@
     <?php
     if (!isset($_SESSION['user'])) : ?>
     <div class="navbar navbar-fixed-bottom">
-        <div class="col-md-2">
+        <div class="col-xs-offset-1 col-xs-2">
         <a class="btn btn-info btn-xs" href="index.php?action=accessAdmin">Accès admin</a>
         </div>
     </div>
@@ -105,8 +105,9 @@
 <script>
     tinymce.init({
         selector: '.tinymce',
-        entity_encoding:"raw"
-
+        entity_encoding:"raw",
+        force_br_newlines : false,
+        force_p_newlines : false
     });
 
 </script>

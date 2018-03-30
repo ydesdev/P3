@@ -8,7 +8,7 @@ body {
 .tiles {
     padding: 8px;
     margin: 8px;
-    ext-align: center;
+    text-align: justify;
 }
 .panel {
     background-color: #A3B2BE;

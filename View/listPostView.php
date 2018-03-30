@@ -9,20 +9,33 @@ $title = 'Billet simple pour l\'Alaska'; ?>
 
 <?php ob_start(); ?>
 <div class="container">
-
+    <?php
+    if (!isset($_SESSION['user'])) : ?>
+        <div class="navbar navbar-fixed-bottom">
+            <div class="col-md-2">
+                <a class="btn btn-info btn-xs" href="index.php?action=accessAdmin">Accès admin</a>
+            </div>
+        </div>
+    <?php endif; ?>
 
 
         <div class="row">
-            <div class="col-xs-offset-1 col-xs-4">
-                <div class="panel">
+            <div class="col-xs-offset-1 col-xs-5">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                            <h3>Index</h3>
+                    </div>
+                    <div class="panel-body">
+
                     <?php
                     foreach ($posts as $data) {
                     ?>
-                  <h3><a href="index.php?action=post&amp;id=<?=$data['id']?>">
-                          <?= htmlspecialchars($data['title'])?> </a></h3>
+                  <h4><a href="index.php?action=post&amp;id=<?=$data['id']?>">
+                          <?= htmlspecialchars($data['title'])?> </a></h4>
                         <?php
                     }
                     ?>
+                    </div>
                 </div>
             </div>
          </div>

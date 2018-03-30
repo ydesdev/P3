@@ -17,7 +17,7 @@
                     <h2> <?= htmlspecialchars($post['title']) ?> </h2>
                 </div>
                 <div class="panel-body">
-                    <p><?= nl2br(htmlspecialchars($post['content'])) ?> </p>
+                    <?= nl2br(htmlspecialchars($post['content'])) ?>
 
                 </div>
             </div>
@@ -32,8 +32,7 @@
             <div class="panel panel-default">
                  <div class="panel-heading">
                     <h3> Commentaires</h3>
-                     <input type="submit" class="btn btn-info btn-xs" data-toggle="modal" data-target="#addComment" value="Ajouter un commentaire">
-                </div>
+                 </div>
                 <div class="panel-body">
                     <table class="table table-hover">
                        <tr>
@@ -45,6 +44,7 @@
                            <td><p><strong><?= htmlspecialchars(trim($comment['author'])) ?></strong><br/> le <?= $comment['comment_date_fr'] ?></p></td>
                             <td><p><?= nl2br(htmlspecialchars(trim($comment['comment']))) ?></p></td>
                            <td><a href="index.php?action=flagComment&amp;id=<?=$comment['id']?>"><input type="submit" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#flagPost" value="Signaler"></a></td>
+
                        </tr>
                     <?php
                         }
@@ -56,6 +56,8 @@
                     }
                     ?>
                     </table>
+
+                    <input type="submit" class="btn btn-info btn-xs" data-toggle="modal" data-target="#addComment" value="Ajouter un commentaire">
                 </div>
             </div>
         </div>

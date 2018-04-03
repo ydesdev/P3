@@ -9,33 +9,25 @@ $title = 'Billet simple pour l\'Alaska'; ?>
 <?php ob_start(); ?>
     <div class="container">
         <div class="row">
-            <div class="col-xs-offset-4 col-xs-4">
-                <div class="jumbotron">
-                    <h2 class="text-center"> S'identifier </h2>
-
-
-                    <form action="index.php?action=accessAdmin" method="post" class="form-horizontal">
-                        <div class="form-group">
-                            <label for="identifiant" class="col-xs-6 control-label"> Identifiant: </label>
-                            <div class="col-xs-6">
-                                <input type="text" name="identifiant">
+            <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h2> S'identifier </h2>
+                        <form action="index.php?action=accessAdmin" method="post">
+                            <div class="col-xs-12 col-sm-8 form-group">
+                                <label for="identifiant"> Identifiant: </label>
+                                <input type="text" class="form-control" name="identifiant"/>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="password" class="col-xs-6 control-label">Mot de Passe: </label>
-                            <div class="col-xs-6">
-                                <input type="password" name="password">
+                            <div class="col-xs-12 col-sm-8 form-group">
+                                <label for="password" class="control-label">Mot de Passe: </label>
+                                <input type="password" class="form-control" name="password"/>
                             </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <div class="col-xs-6 col-xs-push-6">
+                             <div class="col-xs-8 col-sm-8 form-group">
                                 <input type="submit" class="btn btn-info" name="login" value="Login"/>
                             </div>
-                        </div>
-                    </form>
-
-                    <p><a href="index.php"> Retour à la page d'accueil</a></p>
+                         </form>
+                        <p><a href="index.php" class="col-xs-8"> Retour à la page d'accueil</a></p>
+                    </div>
                 </div>
             </div>
         </div>

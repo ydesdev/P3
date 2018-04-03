@@ -11,10 +11,10 @@ $title = 'Billet simple pour l\'Alaska'; ?>
 <div class="container">
 
         <div class="row">
-            <div class="col-xs-offset-1 col-xs-5">
+            <div class="col-xs-12 col-sm-10 col-md-8 col-lg-offset-3 col-lg-6">
                 <div class="panel panel-info">
                     <div class="panel-heading">
-                            <h3>Table des matières</h3>
+                            <h2>Table des matières</h2>
                     </div>
                     <div class="panel-body">
 

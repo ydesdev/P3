@@ -10,7 +10,7 @@
 <?php ob_start(); ?>
 <div class="container">
 <div class="row">
-    <div class="row col-md-offset-2 col-md-8">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-lg-offset-3 col-lg-6">
 
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -19,43 +19,45 @@
 
             </div>
             <div class="panel-body">
-                <table class="table table-hover">
-                    <tr>
-                    <th>Auteur</th>
-                    <th>Commentaire</th>
-                    <th>Nombre de signalements</th>
-                    <th>Action</th>
-                    </tr>
-                    <tr>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <tr>
+                        <th class="col-xs-2">Auteur</th>
+                        <th class="col-xs-2">Commentaire</th>
+                        <th class="col-xs-1">Flags</th>
+                        <th class="col-xs-3">Action</th>
+                        </tr>
+                        <tr>
+                            <?php
+                            if(count($flags)){
+                            foreach ($flags as $flag)
+                            {
+                            ?>
+
+
+                            <td class="col-xs-2"><p><strong><?= htmlspecialchars($flag['author']) ?></strong><br/>
+                                    le <?= $flag['comment_date_fr'] ?></p></td>
+                            <td class="col-xs-2"><p><?= nl2br(htmlspecialchars($flag['comment'])) ?></p></td>
+                            <td class="col-xs-1"><p><?= nl2br(htmlspecialchars($flag['flag_count'])) ?></p></td>
+                            <td class="col-xs-3">
+                                <a href="index.php?action=okComment&amp;id=<?= $flag['id'] ?>" class="btn btn-primary btn-xs">Valider ce commentaire</a>
+                            <br/>
+                                <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteComment"> Effacer ce commentaire</button>
+
+                                <br/>
+                                <a href="index.php?action=post&amp;id=<?= $flag['post_id'] ?>" type="submit" class="btn btn-info btn-xs">Voir le billet</a>
+                            </td>
+                        </tr>
                         <?php
-                        if(count($flags)){
-                        foreach ($flags as $flag)
-                        {
+                            }
+                        }else{ ?>
+                            <p> Pas de commentaire signalé</p>
+                            <?php
+                        }
                         ?>
 
-
-                        <td><p><strong><?= htmlspecialchars($flag['author']) ?></strong><br/>
-                                le <?= $flag['comment_date_fr'] ?></p></td>
-                        <td><p><?= nl2br(htmlspecialchars($flag['comment'])) ?></p></td>
-                        <td><p><?= nl2br(htmlspecialchars($flag['flag_count'])) ?></p></td>
-                        <td>
-                            <a href="index.php?action=okComment&amp;id=<?= $flag['id'] ?>" class="btn btn-primary btn-xs">Valider ce commentaire</a>
-                        <br/>
-                            <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteComment"> Effacer ce commentaire</button>
-
-                            <br/>
-                            <a href="index.php?action=post&amp;id=<?= $flag['post_id'] ?>" type="submit" class="btn btn-info btn-xs">Voir le billet</a>
-                        </td>
-                    </tr>
-                    <?php
-                        }
-                    }else{ ?>
-                        <p> Pas de commentaire signalé</p>
-                        <?php
-                    }
-                    ?>
-
-                </table>
+                    </table>
+                </div>
               </div>
             </div>
             <div class="modal fade" id="deleteComment" role="dialog" aria-labelledby="deleteComment" aria-hidden="true">

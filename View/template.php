@@ -15,6 +15,8 @@
     <script src='Public/tinymce/js/tinymce/jquery.tinymce.min.js'></script>
 
 <!--     <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script> -->
+    <link rel="icon" type="image/png" href="Public/favicon.png" />
+
 
 </head>
 <header>
@@ -22,7 +24,7 @@
     if (isset($_SESSION['user'])) : ?>
     <!--emmet shorcut example: .navbar>ul.nav.navbar-nav>li*5>a[href=#]!-->
 
-        <div class="navbar navbar-inverse">
+        <div class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#adminMenu" aria-expanded="false">
@@ -59,9 +61,8 @@
         <div class="row">
             <div class="col-md-offset-1 col-md-5">
                 <h1><a href="index.php?action=listPosts"> Billet Simple Pour l'Alaska</a></h1>
-            </div>
-            <div class="col-md-4">
-                <h3> Jean Forteroche</h3>
+
+                <h4> Jean Forteroche</h4>
             </div>
 
         </div>
@@ -91,7 +92,7 @@
 <footer>
     <?php
     if (!isset($_SESSION['user'])) : ?>
-    <div class="navbar navbar-fixed-bottom">
+    <div class="navbar navbar-bottom">
         <div class="col-xs-2">
         <a class="btn btn-info btn-xs" href="index.php?action=accessAdmin">Accès admin</a>
         </div>

@@ -1,7 +1,18 @@
-body {
-    background-image: url(photos/quietColdLake.jpg);
-    background-size: cover;
+header {
+    background: linear-gradient(to right, #EBE9E7, #A3B2BE);
+    margin: 20px;
 }
+
+body {
+    background-color: #EBE9E7;
+}
+
+.navbar{
+    background: linear-gradient(to right, #EBE9E7, #A3B2BE);
+    border: 0px;
+    box-shadow: none;
+}
+
 .admin-spacing {
     margin-bottom: 30px !important;
 }
@@ -15,6 +26,10 @@ body {
     opacity: 0.9;
     border-radius: 7px;
 }
+.textarea {
+    padding: 0px;
+}
+
 
 .jumbotron {
     background-color: #A3B2BE;

@@ -18,7 +18,7 @@ $title = 'Billet simple pour l\'Alaska'; ?>
 <?php ob_start(); ?>
 <div class="container">
     <div class="row">
-        <div class="row col-xs-offset-2 col-xs-6">
+        <div class="row col-xs-12 col-sm-10 col-md-8 col-lg-offset-3 col-lg-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <a class="close" href="index.php?action=accessAdmin"> <span class="glyphicon glyphicon-remove-circle"></span></a>

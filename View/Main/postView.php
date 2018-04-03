@@ -88,11 +88,11 @@
                 </div>
                 <div class="modal-body">
                     <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
-                        <div class="col-xs-4 form-group">
+                        <div class="col-xs-8 col-sm-6 col-md-5 form-group">
                             <label for="author">Auteur</label><br/>
                             <input class="form-control" type="text" id="author" name="author"/>
                         </div>
-                        <div class="col-xs-8 form-group">
+                        <div class="col-xs-12 col-sm-8 form-group">
                             <label for="comment">Commentaire</label><br>
                             <textarea class="form-control" id="comment" name="comment"></textarea>
                         </div>

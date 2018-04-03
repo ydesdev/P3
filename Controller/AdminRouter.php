@@ -102,9 +102,10 @@ class AdminRouter extends MainRouter
 
                 }
             }
-            else {
+            elseif (isset($_GET['action']) && $_GET['action']=='accessAdmin'){
 
             $this->adminController->displayLoginForm();
+
         }
         } catch
         (Exception $e) {
